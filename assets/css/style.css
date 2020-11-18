@@ -22,7 +22,7 @@ h2 {
     padding: 25px;
 }
 
-#nut-selector img {
+.col-sm img {
     height: 250px;
     width: 260px;
     border-radius: 45%;
@@ -34,13 +34,32 @@ h2 {
     cursor: pointer;
 }
 
+.col-sm img.active {
+    transition: 0.5s;
+    background-color: #fff;
+    
+}
 
-
-#nut-selector img:hover {
+.col-sm img:hover {
     
     transition: 0.1s ease-in-out;
-    background-color: #fff;
     transform: scale(1.05);
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+    70% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 10px rgba(0, 0, 0, 0)
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
 }
 
 #nut-selector {
@@ -134,4 +153,15 @@ footer {
     0% {transform: translateY(0);}
     20% {transform: translateY(-8px);}
     100% {transform: translateY(0);}
+}
+
+
+
+#nut-bio {
+    font-size: 1.5rem;
+    text-align: center;
+    width: 100vw;
+    height: 50vh;
+    background-color: rgba(226, 208, 148, 0.842);
+    
 }
