@@ -184,13 +184,44 @@ footer {
 
 .question {
     height: 80vh;
-    
+    z-index: 0;
     background-color: #f0c20a;
 }
 
 .answer {
     height: 80vh;
-    
+    z-index: 0;
     background-color: #8d6011;
 }
 
+.row {
+    position: relative;
+}
+
+.center-button {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    z-index: 1000;
+    
+}
+
+.center-button:hover {
+    
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+}
+
+
+
+.center-button h2 {
+    position: relative;
+    top: 25%;
+    
+    
+}

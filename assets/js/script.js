@@ -96,4 +96,23 @@ $(document).ready(function () {
       )
       .fadeIn("slow");
   });
+  let results;
+
+  fetch("data.json")
+    .then((data) => data.json())
+    .then((data) => {
+      results = data;
+
+      var counter = 0;
+      $("#joke-button").on("click", function () {
+        
+        if (counter < results.length) {
+          document.getElementById("joke-container").innerHTML =
+            results[counter].joke;
+          document.getElementById("answer-container").innerHTML =
+            results[counter].answer;
+        }
+        counter++;
+      });
+    });
 });
