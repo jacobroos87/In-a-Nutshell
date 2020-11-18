@@ -36,7 +36,7 @@ h2 {
 
 
 
-img:hover {
+#nut-selector img:hover {
     
     transition: 0.1s ease-in-out;
     background-color: #fff;
