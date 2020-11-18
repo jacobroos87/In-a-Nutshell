@@ -17,16 +17,14 @@ h1 {
 img {
     height: 250px;
     width: 260px;
-    border-radius: 40%;
+    border-radius: 45%;
     padding: 40px 20px;
     background-color: rgba(78, 124, 72, 0.808);
     margin: 30px 30px;
     border: 8px solid rgba(78, 124, 72, 0.808);
 }
 
-.col-sm {
-    
-}
+
 
 img:hover {
     
@@ -42,10 +40,38 @@ img:hover {
 
 .navbar {
     margin-bottom: 25px;
-    background-color: #8d6011;
+    background-color: #a06e19;
 }
 
 .nav-link {
     color: #000;
     font-size: 2rem;
+}
+
+.nav-link:hover {
+    color: #fff;
+    transition: 0.2s ease-in-out;
+}
+
+.form-container {
+    width: 100vw;
+    background-color: #a06e19; 
+    margin-top: 25px;
+}
+
+form {
+    width: 60%;
+    padding: 25px;
+    
+    margin: auto;
+}
+
+.section-banner {
+    padding: 25px;
+}
+
+footer {
+    height: 20vh;
+    width: 100vw;
+    background-color: #fff;
 }
