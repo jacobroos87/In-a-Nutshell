@@ -22,7 +22,7 @@ h2 {
     padding: 25px;
 }
 
-img {
+#nut-selector img {
     height: 250px;
     width: 260px;
     border-radius: 45%;
@@ -31,6 +31,7 @@ img {
     margin: 30px 30px;
     border: 8px solid rgba(78, 124, 72, 0.808);
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
 }
 
 
@@ -94,4 +95,43 @@ footer {
     height: 80vh;
     width: 100vw;
     background-color: rgba(226, 208, 148, 0.842);
+}
+
+footer {
+  background-color: #a06e19; 
+  color: #fafafa;
+  min-height: 120px;
+  padding-top: 30px;
+  text-align: center;
+}
+
+.social-links li a i {
+  width: 50px;
+  height: 50px;
+  padding: 20px 0;
+  border-radius: 50%;
+  font-size: 25px;
+  line-height: 7px;
+  text-align: center;
+  color: #000;
+  background: #fff;
+  
+  
+  transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+.social-links li a i:hover {
+  background: #000;
+  color: #fff;
+  animation-name: socials;
+  animation-duration: 1s;
+}
+
+@keyframes socials {
+    0% {transform: translateY(0);}
+    20% {transform: translateY(-8px);}
+    100% {transform: translateY(0);}
 }
