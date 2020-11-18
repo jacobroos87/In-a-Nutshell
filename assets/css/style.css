@@ -1,6 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Concert+One:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Display:wght@500&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Big Shoulders Inline Display", sans-serif;
     font-weight: 500;
@@ -14,6 +18,10 @@ h1 {
 
 }
 
+h2 {
+    padding: 25px;
+}
+
 img {
     height: 250px;
     width: 260px;
@@ -22,6 +30,7 @@ img {
     background-color: rgba(78, 124, 72, 0.808);
     margin: 30px 30px;
     border: 8px solid rgba(78, 124, 72, 0.808);
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 
@@ -30,11 +39,12 @@ img:hover {
     
     transition: 0.1s ease-in-out;
     background-color: #fff;
-    
+    transform: scale(1.05);
 }
 
 #nut-selector {
     display: inline-block;
+    padding-bottom: 25px;
     
 }
 
@@ -55,14 +65,17 @@ img:hover {
 
 .form-container {
     width: 100vw;
-    background-color: #a06e19; 
+    background-color: #fff; 
     margin-top: 25px;
+    margin-bottom: 40px;
+
+
 }
 
 form {
     width: 60%;
     padding: 25px;
-    
+    background-color: #d9d8c2;
     margin: auto;
 }
 
@@ -71,7 +84,14 @@ form {
 }
 
 footer {
-    height: 20vh;
+    height: 10vh;
     width: 100vw;
-    background-color: #fff;
+    
+    background-color: #a06e19; 
+}
+
+#nut-data {
+    height: 80vh;
+    width: 100vw;
+    background-color: rgba(226, 208, 148, 0.842);
 }
