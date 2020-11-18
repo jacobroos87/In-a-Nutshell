@@ -182,3 +182,15 @@ footer {
     
 }
 
+.question {
+    height: 80vh;
+    
+    background-color: #f0c20a;
+}
+
+.answer {
+    height: 80vh;
+    
+    background-color: #8d6011;
+}
+
