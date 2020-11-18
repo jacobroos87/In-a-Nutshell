@@ -214,8 +214,12 @@ footer {
 .center-button:hover {
     
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    zoom: 1.1;
+    transition: ease-in-out;
     cursor: pointer;
 }
+
+
 
 
 
@@ -224,4 +228,21 @@ footer {
     top: 25%;
     
     
+}
+
+#joke-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+
+}
+
+#answer-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
 }

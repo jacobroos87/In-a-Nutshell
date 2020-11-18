@@ -96,6 +96,15 @@ $(document).ready(function () {
       )
       .fadeIn("slow");
   });
+
+  $("#joke-button").on("click", function () {
+    $("#joke-button").html("<h2>Reveal</h2>");
+    $("#answer-box").hide();
+  });
+  
+
+
+
   let results;
 
   fetch("data.json")
@@ -105,14 +114,19 @@ $(document).ready(function () {
 
       var counter = 0;
       $("#joke-button").on("click", function () {
+          $("#answer-box").show();
+          $("#joke-button").html("<h2>Generate</h2>");
+          
         
         if (counter < results.length) {
-          document.getElementById("joke-container").innerHTML =
+          document.getElementById("joke-box").innerHTML =
             results[counter].joke;
-          document.getElementById("answer-container").innerHTML =
+          document.getElementById("answer-box").innerHTML =
             results[counter].answer;
         }
         counter++;
       });
     });
+
+
 });
