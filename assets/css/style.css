@@ -22,6 +22,10 @@ h2 {
     padding: 25px;
 }
 
+h3 {
+    margin: 0;
+}
+
 .col-sm img {
     height: 250px;
     width: 260px;
@@ -84,19 +88,31 @@ h2 {
 }
 
 .form-container {
-    width: 100vw;
-    background-color: #fff; 
-    margin-top: 25px;
-    margin-bottom: 40px;
+    width: 100vw; 
+    padding-top: 25px;
+    padding-bottom: 40px;
+    background-color: rgba(226, 208, 148, 0.842);
+    
 
 
 }
+
+
 
 form {
     width: 60%;
     padding: 25px;
     background-color: #d9d8c2;
     margin: auto;
+}
+
+#nut-bio {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#nut-bio p {
+    padding:0 100px;
 }
 
 .section-banner {
@@ -113,7 +129,7 @@ footer {
 #nut-data {
     height: 80vh;
     width: 100vw;
-    background-color: rgba(226, 208, 148, 0.842);
+    
 }
 
 footer {
@@ -165,3 +181,4 @@ footer {
     background-color: rgba(226, 208, 148, 0.842);
     
 }
+
