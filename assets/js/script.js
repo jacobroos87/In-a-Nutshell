@@ -97,10 +97,11 @@ $(document).ready(function () {
       .fadeIn("slow");
   });
 
-  $("#joke-button").on("click", function () {
-    $("#joke-button").html("<h2>Reveal</h2>");
-    $("#answer-box").hide();
-  });
+//   $("#joke-button").on("click", function () {
+//     $("#joke-button").hide();
+//     $("#answer-button").show();
+    
+//   });
   
 
 
@@ -113,10 +114,22 @@ $(document).ready(function () {
       results = data;
 
       var counter = 0;
+
+    
+    
       $("#joke-button").on("click", function () {
-          $("#answer-box").show();
-          $("#joke-button").html("<h2>Generate</h2>");
-          
+          if (counter < results.length) {
+            $("#answer-box").hide();
+            $("#answer-button").show().on("click", function () {
+              $("#answer-box").show();
+              $("#answer-button").hide();
+          });
+      } else {
+          counter = 0;
+          $("#answer-box").hide();
+          $("#answer-button").show();
+      }
+    
         
         if (counter < results.length) {
           document.getElementById("joke-box").innerHTML =
