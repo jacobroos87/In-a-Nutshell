@@ -141,5 +141,48 @@ $(document).ready(function () {
       });
     });
 
+    var chart = c3.generate({
+    size: {
+        height: 500,
+        width: 700
+    },
+    data: {
+        x: 'x',
+            xFormat: '%Y',
+        
+      columns: [
+        ['x', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'],
+  
+        
+        ["World Production Amounts (Metric Tons)", 918955, 1127256, 1072135, 1097228, 1058925, 1091583, 1180779, 1226640, 1284131, 1368703],
+        
+      ],
+      
+      type: "bar",
+    },
+    axis: {
+        y: {
+            tick: {
+                format: d3.format(",")
+            }
+        },
+        x: {
+            type: 'timeseries',
+            tick: {
+                format: '%Y'
+            }
+        }
+        
+    },
+    bar: {
+      width: {
+        ratio: 0.6, // this makes bar width 50% of length between ticks
+      },
+      // or
+      //width: 100 // this makes bar width 100px
+        },
+    });
+
+
 
 });

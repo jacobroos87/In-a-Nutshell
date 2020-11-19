@@ -25,12 +25,13 @@
 		<nav class="nav">
 			<a class="nav-link active" href="#nut-bio">Info</a>
 			<a class="nav-link" href="#nut-data">Data</a>
-			<a class="nav-link" href="#nut-jokes">Jokes</a>
+			<a class="nav-link" href="#joke-generator">Jokes</a>
 			<a class="nav-link" href="#contact-form">Contact</a>
 		</nav>
 	</div>
 
 <section id="nut-selector">
+    <h2 class="section-banner">- Choose your nut -</h2>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm">
@@ -69,6 +70,7 @@
 			</div>
 		</div>
 	</div>
+</section>
 
 <section id="nut-bio">
     
@@ -81,29 +83,28 @@
 
 </section>
 <section id="nut-data">
-    <div class="row">
-        <div class="col" id="data-container">
-            <h2>- Nut Nutrition -</h2>
-      
+    <div class="container-fluid">
+        <div class="row">                             
+            <div class="col-lg-6 col-sm-12 section-banner">
+                <h2>- Nut Nutrition -</h2>
+            </div>
+            <div class="col-lg-6 col-sm-12 section-banner">
+                <h2>- Nut Production Data -</h2>
+            </div>
         </div>
-        <div class="col" id="chart">
-            <h2>- Nut Production Data -</h2>
+        <div class="row">
+            <div class="col-lg-6 col-sm-12" id="data-container">
+            </div>
+            <div class="col-lg-6 col-sm-12" id="chart">        
+            </div>
+        </div>
+    </div>
+</section>
 
-        </div>
-    </div>
-</section>
-<section>
-    <div class="col-md-12">
-    
-    </div>
-    <div class="col-md-12">
-    
-    </div>
-</section>
 <section id="joke-generator">
 <div class="container-fluid">
   <div class="row">
-    <div class="col question" id="joke-container">
+    <div class="col-lg-6 col-sm-12 question" id="joke-container">
         <div id="joke-box"></div>
     </div>
     <div class="center-button" id="joke-button">
@@ -114,7 +115,7 @@
         <h2>Reveal</h2>
     </div>
     
-    <div class="col answer" id="answer-container">
+    <div class="col-lg-6 col-sm-12 answer" id="answer-container">
         <div id="answer-box"></div>
     </div>
     

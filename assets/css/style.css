@@ -68,7 +68,8 @@ h3 {
 
 #nut-selector {
     display: inline-block;
-    padding-bottom: 25px;
+    height: 100vh;
+    
     
 }
 
@@ -127,8 +128,9 @@ footer {
 }
 
 #nut-data {
-    height: 80vh;
+    
     width: 100vw;
+    padding-bottom: 25px;
     
 }
 
@@ -251,4 +253,14 @@ footer {
 
 #answer-button {
     display: none;
+}
+
+.c3 svg {
+    font-family: inherit;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.c3-legend-item {
+    font-size: 1rem;
 }
