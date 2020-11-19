@@ -174,6 +174,10 @@ $(document).ready(function () {
         }
         
     },
+
+    color: {
+        pattern: ['rgba(78, 124, 72, 0.808)']
+    },
     bar: {
       width: {
         ratio: 0.6, // this makes bar width 50% of length between ticks
