@@ -173,6 +173,28 @@ footer {
     100% {transform: translateY(0);}
 }
 
+.nut-icons {
+    padding-bottom: 20px;
+    padding-top: 50px;
+}
+
+.nut-links li img {
+  height: 40px;
+  border-radius: 50%;
+  font-size: 25px;
+  line-height: 7px;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -webkit-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+}
+
+.nut-links li img:hover {
+  cursor: pointer;
+  animation-name: socials;
+  animation-duration: 1s;
+}
 
 
 #nut-bio {
@@ -263,4 +285,5 @@ footer {
 
 .c3-legend-item {
     font-size: 1rem;
+    text-align: center;
 }
