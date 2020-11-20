@@ -19,6 +19,8 @@ $(document).ready(function () {
         "<h3>- Almond -</h3><br><p>Fortunately, the delicately flavored and versatile almond is available throughout the year to make a healthy and tasty addition to both sweet and savory dishes. Although packaged almonds are available year round, they are the freshest in mid-summer, which is when they are at the height of their season.<br><br>The almond that we think of as a nut is technically the seed of the fruit of the almond tree, a medium-size tree that bears fragrant pink and white flowers. Like its cousins, the peach, cherry and apricot trees, the almond tree bears fruits with stone-like seeds (or pits) within. The seed of the almond fruit is what we refer to as the almond nut.<br><br></p>"
       )
       .fadeIn("slow");
+
+
   });
 
   $("#hazelnut").on("click", function () {
@@ -141,6 +143,9 @@ $(document).ready(function () {
       });
     });
 
+    var data1 = ["Almond World Production Amounts (Metric Tons)", 918955, 1127256, 1072135, 1097228, 1058925, 1091583, 1180779, 1226640, 1284131, 1368703]
+
+    
     var chart = c3.generate({
     size: {
         height: 500,
@@ -152,9 +157,8 @@ $(document).ready(function () {
         
       columns: [
         ['x', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2020'],
-  
-        
-        ["World Production Amounts (Metric Tons)", 918955, 1127256, 1072135, 1097228, 1058925, 1091583, 1180779, 1226640, 1284131, 1368703],
+
+        data1,
         
       ],
       
