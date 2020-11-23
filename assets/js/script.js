@@ -478,9 +478,6 @@ var foodId;
     .then((response) => {
       results = response;
 
-      // So to display them in HTML, you'll need to loop through and extract each field.
-      // Something like:
-
       let htmlString = "";
       for (let i = 0; i < results.nutrition.nutrients.length; i++) {
         htmlString += `<div class="result">
@@ -500,19 +497,19 @@ var foodId;
 
   };
 
-  let results;
+  let jokeResults;
 
   fetch("data.json")
     .then((data) => data.json())
     .then((data) => {
-      results = data;
+      jokeResults = data;
 
       var counter = 0;
 
     
     
       $("#joke-button").on("click", function () {
-          if (counter < results.length) {
+          if (counter < jokeResults.length) {
             $("#answer-box").hide();
             $("#answer-button").show().on("click", function () {
               $("#answer-box").show();
@@ -525,11 +522,11 @@ var foodId;
       }
     
         
-        if (counter < results.length) {
+        if (counter < jokeResults.length) {
           document.getElementById("joke-box").innerHTML =
-            results[counter].joke;
+            jokeResults[counter].joke;
           document.getElementById("answer-box").innerHTML =
-            results[counter].answer;
+            jokeResults[counter].answer;
         }
         counter++;
       });

@@ -26,7 +26,7 @@ h3 {
     margin: 0;
 }
 
-.col-sm img {
+.col-sm-4 img {
     height: 250px;
     width: 260px;
     border-radius: 45%;
@@ -38,13 +38,37 @@ h3 {
     cursor: pointer;
 }
 
-.col-sm img.active {
+@media (max-width:992px) {
+    .col-sm-4 img {
+        width: 170px;
+        height: 170px;
+        margin: 10px 10px;
+        padding: 15px 5px;
+        
+    }
+}
+
+@media (max-width: 576px) {
+    .col-sm-4 img {
+        width: 85px;
+        height: 85px;
+    }
+}
+
+@media (max-width: 576px) {
+    div.col-sm-4.col-md-4 {
+        width: auto;
+        padding: 0;
+    }
+}
+
+.col-sm-4 img.active {
     transition: 0.5s;
     background-color: #fff;
     
 }
 
-.col-sm img:hover {
+.col-sm-4 img:hover {
     
     transition: 0.1s ease-in-out;
     transform: scale(1.05);
@@ -68,6 +92,7 @@ h3 {
 
 #nut-selector {
     display: inline-block;
+    overflow: auto;
     height: 100vh;
     
     
@@ -107,13 +132,26 @@ form {
     margin: auto;
 }
 
+@media (max-width: 768px) {
+    form {
+        width: 85%;
+    }
+}
+
 #nut-bio {
     display: table-cell;
+    height: 50vh;
     vertical-align: middle;
 }
 
 #nut-bio p {
     padding:0 100px;
+}
+
+@media (max-width: 576px) {
+    #nut-bio p {
+    padding:0 10px;
+    }
 }
 
 .section-banner {
@@ -216,6 +254,15 @@ footer {
     height: 80vh;
     z-index: 0;
     background-color: #8d6011;
+}
+
+@media (max-width: 768px) {
+    .answer {
+        height: 50vh;
+    }
+    .question {
+        height: 50vh;
+    }
 }
 
 .row {
