@@ -27,7 +27,7 @@ var brazilData = ["Brazil Nut World Production Amounts (Metric Tons)", 21490, 26
 
     var chart = c3.generate({
     size: {
-        height: 500,
+        height: 550,
         width: 700
     },
     data: {
@@ -75,7 +75,7 @@ var brazilData = ["Brazil Nut World Production Amounts (Metric Tons)", 21490, 26
     
     var chart = c3.generate({
     size: {
-        height: 500,
+        height: 550,
         width: 700
     },
     data: {
@@ -123,7 +123,7 @@ var brazilData = ["Brazil Nut World Production Amounts (Metric Tons)", 21490, 26
     
     var chart = c3.generate({
     size: {
-        height: 500,
+        height: 550,
         width: 700
     },
     data: {
@@ -170,7 +170,7 @@ var brazilData = ["Brazil Nut World Production Amounts (Metric Tons)", 21490, 26
       .fadeIn("slow");
     var chart = c3.generate({
     size: {
-        height: 500,
+        height: 550,
         width: 700
     },
     data: {
@@ -217,7 +217,7 @@ var brazilData = ["Brazil Nut World Production Amounts (Metric Tons)", 21490, 26
       .fadeIn("slow");
     var chart = c3.generate({
     size: {
-        height: 500,
+        height: 550,
         width: 700
     },
     data: {
@@ -264,7 +264,7 @@ var brazilData = ["Brazil Nut World Production Amounts (Metric Tons)", 21490, 26
       .fadeIn("slow");
     var chart = c3.generate({
     size: {
-        height: 500,
+        height: 550,
         width: 700
     },
     data: {
@@ -311,7 +311,7 @@ var brazilData = ["Brazil Nut World Production Amounts (Metric Tons)", 21490, 26
       .fadeIn("slow");
     var chart = c3.generate({
     size: {
-        height: 500,
+        height: 550,
         width: 700
     },
     data: {
@@ -357,7 +357,7 @@ var brazilData = ["Brazil Nut World Production Amounts (Metric Tons)", 21490, 26
       .fadeIn("slow");
     var chart = c3.generate({
     size: {
-        height: 500,
+        height: 550,
         width: 700
     },
     data: {
@@ -404,7 +404,7 @@ var brazilData = ["Brazil Nut World Production Amounts (Metric Tons)", 21490, 26
       .fadeIn("slow");
     var chart = c3.generate({
     size: {
-        height: 500,
+        height: 550,
         width: 700
     },
     data: {
@@ -440,14 +440,43 @@ var brazilData = ["Brazil Nut World Production Amounts (Metric Tons)", 21490, 26
     });
   });
 
-//   $("#joke-button").on("click", function () {
-//     $("#joke-button").hide();
-//     $("#answer-button").show();
-    
-//   });
-  
+  var foodId = 12142;
+  fetch(
+    "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/ingredients/" +
+      foodId +
+      "/information?amount=10&unit=gram",
+    {
+      method: "GET",
+      headers: {
+        "x-rapidapi-key": "API_KEY_HERE",
+        "x-rapidapi-host":
+          "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+      },
+    }
+  )
+    .then((response) => response.json())
+    .then((response) => {
+      results = response;
 
+      // So to display them in HTML, you'll need to loop through and extract each field.
+      // Something like:
 
+      let htmlString = "";
+      for (let i = 0; i < results.nutrition.nutrients.length; i++) {
+        htmlString += `<div class="result">
+                        
+                        <div class="title">${results.nutrition.nutrients[i].title}</div>
+                        <div class="amount">${results.nutrition.nutrients[i].amount}</div>
+                        <div class="unit">${results.nutrition.nutrients[i].unit}</div>
+                        <div class="percentOfDailyNeeds">${results.nutrition.nutrients[i].percentOfDailyNeeds}% RDA</div>
+                    </div>`;
+      }
+
+      document.getElementById("data-container").innerHTML = htmlString;
+    })
+    .catch((err) => {
+      console.error(err);
+    });
 
   let results;
 
@@ -483,53 +512,4 @@ var brazilData = ["Brazil Nut World Production Amounts (Metric Tons)", 21490, 26
         counter++;
       });
     });
-
-    
-    
-    
-    // C3 chart
-
-    var chart = c3.generate({
-    size: {
-        height: 500,
-        width: 700
-    },
-    data: {
-        x: 'x',
-            xFormat: '%Y',
-        
-    //   columns: [
-    //     xAxis, nutData,
-    //   ],
-      
-      type: "bar",
-    },
-    axis: {
-        y: {
-            tick: {
-                format: d3.format(",")
-            }
-        },
-        x: {
-            type: 'timeseries',
-            tick: {
-                format: '%Y'
-            }
-        }
-        
-    },
-
-    color: {
-        pattern: ['rgba(78, 124, 72, 0.808)']
-    },
-    bar: {
-      width: {
-        ratio: 0.6, 
-      },
-      
-        },
-    });
-
-
-
 });
