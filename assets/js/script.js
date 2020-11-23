@@ -13,9 +13,11 @@ var peanutData = ["Peanut World Production Amounts (Metric Tons)", 918955, 11272
 var pecanData = ["Pecan World Production Amounts (Metric Tons)", 91214, 91215, 115768, 110670, 122340, 119726, 130993, 144765, 146827, 139739]
 var pistaData = ["Pistachio World Production Amounts (Metric Tons)", 632500, 475700, 600135, 467155, 557850, 521495, 735129, 587506, 773528, 655200]
 var brazilData = ["Brazil Nut World Production Amounts (Metric Tons)", 21490, 26450, 23673, 28880, 26850, 28500, 27850, 27850, 38500, 26100]
-
+var foodId;
 
   $("#cashew,#cashew-icon").on("click", function () {
+      foodId = 12085;
+      apiCall();
     $(".col-sm img").removeClass("active");
     $("#cashew").addClass("active");
     $(".info-container")
@@ -64,6 +66,8 @@ var brazilData = ["Brazil Nut World Production Amounts (Metric Tons)", 21490, 26
   });
 
   $("#almond,#almond-icon").on("click", function () {
+      foodId = 12061;
+      apiCall();
     $(".col-sm img").removeClass("active");
     $("#almond").addClass("active");
     $(".info-container")
@@ -112,6 +116,8 @@ var brazilData = ["Brazil Nut World Production Amounts (Metric Tons)", 21490, 26
   });
 
   $("#hazelnut,#hazelnut-icon").on("click", function () {
+      foodId = 12120;
+      apiCall();
     $(".col-sm img").removeClass("active");
     $("#hazelnut").addClass("active");
     $(".info-container")
@@ -160,6 +166,8 @@ var brazilData = ["Brazil Nut World Production Amounts (Metric Tons)", 21490, 26
   });
 
   $("#macadamia,#macadamia-icon").on("click", function () {
+      foodId = 12131;
+      apiCall();
     $(".col-sm img").removeClass("active");
     $("#macadamia").addClass("active");
     $(".info-container")
@@ -207,6 +215,8 @@ var brazilData = ["Brazil Nut World Production Amounts (Metric Tons)", 21490, 26
   });
 
   $("#peanut,#peanut-icon").on("click", function () {
+      foodId = 16091;
+      apiCall();
     $(".col-sm img").removeClass("active");
     $("#peanut").addClass("active");
     $(".info-container")
@@ -254,6 +264,8 @@ var brazilData = ["Brazil Nut World Production Amounts (Metric Tons)", 21490, 26
   });
 
   $("#pecan,#pecan-icon").on("click", function () {
+      foodId = 12142;
+      apiCall();
     $(".col-sm img").removeClass("active");
     $("#pecan").addClass("active");
     $(".info-container")
@@ -301,6 +313,8 @@ var brazilData = ["Brazil Nut World Production Amounts (Metric Tons)", 21490, 26
   });
 
   $("#pistachio,#pistachio-icon").on("click", function () {
+      foodId = 12152;
+      apiCall();
     $(".col-sm img").removeClass("active");
     $("#pistachio").addClass("active");
     $(".info-container")
@@ -347,6 +361,8 @@ var brazilData = ["Brazil Nut World Production Amounts (Metric Tons)", 21490, 26
     });
   });
   $("#brazilnut,#brazilnut-icon").on("click", function () {
+      foodId = 12078;
+      apiCall();
     $(".col-sm img").removeClass("active");
     $("#brazilnut").addClass("active");
     $(".info-container")
@@ -394,6 +410,8 @@ var brazilData = ["Brazil Nut World Production Amounts (Metric Tons)", 21490, 26
   });
 
   $("#walnut,#walnut-icon").on("click", function () {
+      foodId = 12155;
+      apiCall();
     $(".col-sm img").removeClass("active");
     $("#walnut").addClass("active");
     $(".info-container")
@@ -440,7 +458,9 @@ var brazilData = ["Brazil Nut World Production Amounts (Metric Tons)", 21490, 26
     });
   });
 
-  var foodId = 12142;
+
+  function apiCall() {
+
   fetch(
     "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/ingredients/" +
       foodId +
@@ -477,6 +497,8 @@ var brazilData = ["Brazil Nut World Production Amounts (Metric Tons)", 21490, 26
     .catch((err) => {
       console.error(err);
     });
+
+  };
 
   let results;
 
