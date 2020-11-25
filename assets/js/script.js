@@ -73,6 +73,9 @@ var foodId;
   $("#almond,#almond-icon").on("click", function () {
       foodId = 12061;
       apiCall();
+    $("#nut-data").show().fadeIn();
+    $("#downArrow").css("opacity","1");
+    $("#nut-bio").css("display","table-cell").fadeIn();
     $(".col-sm img").removeClass("active");
     $("#almond").addClass("active");
     $(".info-container")
@@ -123,6 +126,9 @@ var foodId;
   $("#hazelnut,#hazelnut-icon").on("click", function () {
       foodId = 12120;
       apiCall();
+    $("#nut-data").show().fadeIn();
+    $("#downArrow").css("opacity","1");
+    $("#nut-bio").css("display","table-cell").fadeIn();
     $(".col-sm img").removeClass("active");
     $("#hazelnut").addClass("active");
     $(".info-container")
@@ -173,6 +179,9 @@ var foodId;
   $("#macadamia,#macadamia-icon").on("click", function () {
       foodId = 12131;
       apiCall();
+    $("#nut-data").show().fadeIn();
+    $("#downArrow").css("opacity","1");
+    $("#nut-bio").css("display","table-cell").fadeIn();
     $(".col-sm img").removeClass("active");
     $("#macadamia").addClass("active");
     $(".info-container")
@@ -222,6 +231,9 @@ var foodId;
   $("#peanut,#peanut-icon").on("click", function () {
       foodId = 16091;
       apiCall();
+    $("#nut-data").show().fadeIn();
+    $("#downArrow").css("opacity","1");
+    $("#nut-bio").css("display","table-cell").fadeIn();
     $(".col-sm img").removeClass("active");
     $("#peanut").addClass("active");
     $(".info-container")
@@ -271,6 +283,9 @@ var foodId;
   $("#pecan,#pecan-icon").on("click", function () {
       foodId = 12142;
       apiCall();
+    $("#nut-data").show().fadeIn();
+    $("#downArrow").css("opacity","1");
+    $("#nut-bio").css("display","table-cell").fadeIn();
     $(".col-sm img").removeClass("active");
     $("#pecan").addClass("active");
     $(".info-container")
@@ -320,6 +335,9 @@ var foodId;
   $("#pistachio,#pistachio-icon").on("click", function () {
       foodId = 12152;
       apiCall();
+    $("#nut-data").show().fadeIn();
+    $("#downArrow").css("opacity","1");
+    $("#nut-bio").css("display","table-cell").fadeIn();
     $(".col-sm img").removeClass("active");
     $("#pistachio").addClass("active");
     $(".info-container")
@@ -368,6 +386,9 @@ var foodId;
   $("#brazilnut,#brazilnut-icon").on("click", function () {
       foodId = 12078;
       apiCall();
+    $("#nut-data").show().fadeIn();
+    $("#downArrow").css("opacity","1");
+    $("#nut-bio").css("display","table-cell").fadeIn();
     $(".col-sm img").removeClass("active");
     $("#brazilnut").addClass("active");
     $(".info-container")
@@ -417,6 +438,9 @@ var foodId;
   $("#walnut,#walnut-icon").on("click", function () {
       foodId = 12155;
       apiCall();
+    $("#nut-data").show().fadeIn();
+    $("#downArrow").css("opacity","1");
+    $("#nut-bio").css("display","table-cell").fadeIn();
     $(".col-sm img").removeClass("active");
     $("#walnut").addClass("active");
     $(".info-container")
