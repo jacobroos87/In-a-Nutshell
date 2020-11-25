@@ -25,6 +25,8 @@ var foodId;
     $("#nut-bio").css("display","table-cell").fadeIn();
     $(".col-sm img").removeClass("active");
     $("#cashew").addClass("active");
+    $(".nut-links li img").removeClass("icon-active");
+    $("#cashew-icon").addClass("icon-active");
     $(".info-container")
       .hide()
       .html(
@@ -78,6 +80,8 @@ var foodId;
     $("#nut-bio").css("display","table-cell").fadeIn();
     $(".col-sm img").removeClass("active");
     $("#almond").addClass("active");
+    $(".nut-links li img").removeClass("icon-active");
+    $("#almond-icon").addClass("icon-active");
     $(".info-container")
       .hide()
       .html(
@@ -131,6 +135,8 @@ var foodId;
     $("#nut-bio").css("display","table-cell").fadeIn();
     $(".col-sm img").removeClass("active");
     $("#hazelnut").addClass("active");
+    $(".nut-links li img").removeClass("icon-active");
+    $("#hazel-icon").addClass("icon-active");
     $(".info-container")
       .hide()
       .html(
@@ -184,6 +190,8 @@ var foodId;
     $("#nut-bio").css("display","table-cell").fadeIn();
     $(".col-sm img").removeClass("active");
     $("#macadamia").addClass("active");
+    $(".nut-links li img").removeClass("icon-active");
+    $("#macadamia-icon").addClass("icon-active");
     $(".info-container")
       .hide()
       .html(
@@ -236,6 +244,8 @@ var foodId;
     $("#nut-bio").css("display","table-cell").fadeIn();
     $(".col-sm img").removeClass("active");
     $("#peanut").addClass("active");
+    $(".nut-links li img").removeClass("icon-active");
+    $("#peanut-icon").addClass("icon-active");
     $(".info-container")
       .hide()
       .html(
@@ -288,6 +298,8 @@ var foodId;
     $("#nut-bio").css("display","table-cell").fadeIn();
     $(".col-sm img").removeClass("active");
     $("#pecan").addClass("active");
+    $(".nut-links li img").removeClass("icon-active");
+    $("#pecan-icon").addClass("icon-active");
     $(".info-container")
       .hide()
       .html(
@@ -340,6 +352,8 @@ var foodId;
     $("#nut-bio").css("display","table-cell").fadeIn();
     $(".col-sm img").removeClass("active");
     $("#pistachio").addClass("active");
+    $(".nut-links li img").removeClass("icon-active");
+    $("#pistachio-icon").addClass("icon-active");
     $(".info-container")
       .hide()
       .html(
@@ -391,6 +405,8 @@ var foodId;
     $("#nut-bio").css("display","table-cell").fadeIn();
     $(".col-sm img").removeClass("active");
     $("#brazilnut").addClass("active");
+    $(".nut-links li img").removeClass("icon-active");
+    $("#brazilnut-icon").addClass("icon-active");
     $(".info-container")
       .hide()
       .html(
@@ -443,6 +459,8 @@ var foodId;
     $("#nut-bio").css("display","table-cell").fadeIn();
     $(".col-sm img").removeClass("active");
     $("#walnut").addClass("active");
+    $(".nut-links li img").removeClass("icon-active");
+    $("#walnut-icon").addClass("icon-active");
     $(".info-container")
       .hide()
       .html(
