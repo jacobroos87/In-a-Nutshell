@@ -93,9 +93,52 @@ h3 {
 #nut-selector {
     display: inline-block;
     overflow: auto;
-    height: 100vh;
-    
-    
+    height: 90vh;
+}
+
+@media (max-width: 576px) {
+    #nut-selector {
+    height: 75vh;
+    }
+}
+
+
+
+#nut-selector .container {
+    padding-bottom: 30px;
+}
+
+@media (max-width: 576px) {
+    #nut-selector .container {
+    padding-bottom: 15px;
+    }
+}
+
+#downArrow {
+    font-size: 3.5rem;
+    color: #a06e19;
+    opacity: 0;
+    animation: arrow 1s infinite;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.19);
+
+}
+
+@keyframes arrow {
+    0% {
+        transform: translateY(0);
+    }
+    70% {
+        transform: translateY(7px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 576px) {
+    #nut-selector i {
+    font-size: 2rem;
+    }
 }
 
 .navbar {
@@ -138,11 +181,13 @@ form {
     }
 }
 
-#nut-bio {
-    display: table-cell;
+/* #nut-bio {
+    /* display: table-cell; */
+    /* display: none;
     height: 50vh;
     vertical-align: middle;
-}
+    
+} */ 
 
 #nut-bio p {
     padding:0 100px;
@@ -169,6 +214,7 @@ footer {
     
     width: 100vw;
     padding-bottom: 25px;
+    display: none;
     
 }
 
@@ -236,11 +282,15 @@ footer {
 
 
 #nut-bio {
+    
     font-size: 1.5rem;
+    margin: auto;
     text-align: center;
     width: 100vw;
     height: 50vh;
     background-color: rgba(226, 208, 148, 0.842);
+    vertical-align: middle;
+    display: none;
     
 }
 

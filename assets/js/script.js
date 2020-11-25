@@ -15,9 +15,14 @@ var pistaData = ["Pistachio World Production Amounts (Metric Tons)", 632500, 475
 var brazilData = ["Brazil Nut World Production Amounts (Metric Tons)", 21490, 26450, 23673, 28880, 26850, 28500, 27850, 27850, 38500, 26100]
 var foodId;
 
+
   $("#cashew,#cashew-icon").on("click", function () {
       foodId = 12085;
       apiCall();
+      
+    $("#nut-data").show().fadeIn();
+    $("#downArrow").css("opacity","1");
+    $("#nut-bio").css("display","table-cell").fadeIn();
     $(".col-sm img").removeClass("active");
     $("#cashew").addClass("active");
     $(".info-container")
@@ -468,7 +473,7 @@ var foodId;
     {
       method: "GET",
       headers: {
-        "x-rapidapi-key": "API_KEY_HERE",
+        "x-rapidapi-key": "726b42b1dfmsh87487f89e96dceap14ad15jsnfceb0ed75073",
         "x-rapidapi-host":
           "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
       },
