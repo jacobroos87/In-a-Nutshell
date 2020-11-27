@@ -1,4 +1,5 @@
 $(document).ready(function () {
+require('dotenv').config()
 
 // Chart data variables
 
@@ -515,7 +516,7 @@ var foodId;
     {
       method: "GET",
       headers: {
-        "x-rapidapi-key": "726b42b1dfmsh87487f89e96dceap14ad15jsnfceb0ed75073",
+        "x-rapidapi-key": process.env.API_KEY_HERE,
         "x-rapidapi-host":
           "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
       },
