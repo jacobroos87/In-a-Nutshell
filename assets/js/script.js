@@ -15,7 +15,8 @@ $(document).ready(function () {
     "2019",
     "2020",
   ];
-  var cashewData = [
+  const nutData = {
+    cashew: [
     "Cashew World Production Amounts (Metric Tons)",
     469079,
     576431,
@@ -27,8 +28,8 @@ $(document).ready(function () {
     792647,
     777630,
     786266,
-  ];
-  var almondData = [
+  ],
+   almondData: [
     "Almond World Production Amounts (Metric Tons)",
     918955,
     1127256,
@@ -40,8 +41,8 @@ $(document).ready(function () {
     1226640,
     1284131,
     1368703,
-  ];
-  var hazelData = [
+  ],
+  hazelData: [
     "Hazelnut World Production Amounts (Metric Tons)",
     417950,
     374600,
@@ -53,8 +54,8 @@ $(document).ready(function () {
     510270,
     460043,
     528068,
-  ];
-  var macaData = [
+  ],
+  macaData: [
     "Macadamia World Production Amounts (Metric Tons)",
     28582,
     29356,
@@ -66,8 +67,8 @@ $(document).ready(function () {
     50030,
     58821,
     60057,
-  ];
-  var walnutData = [
+  ],
+  walnutData: [
     "Walnut World Production Amounts (Metric Tons)",
     553972,
     535816,
@@ -79,8 +80,8 @@ $(document).ready(function () {
     867040,
     885038,
     965402,
-  ];
-  var peanutData = [
+  ],
+  peanutData: [
     "Peanut World Production Amounts (Metric Tons)",
     918955,
     1127256,
@@ -92,8 +93,8 @@ $(document).ready(function () {
     1226640,
     1284131,
     1368703,
-  ];
-  var pecanData = [
+  ],
+  pecanData: [
     "Pecan World Production Amounts (Metric Tons)",
     91214,
     91215,
@@ -105,8 +106,8 @@ $(document).ready(function () {
     144765,
     146827,
     139739,
-  ];
-  var pistaData = [
+  ],
+  pistaData: [
     "Pistachio World Production Amounts (Metric Tons)",
     632500,
     475700,
@@ -118,8 +119,8 @@ $(document).ready(function () {
     587506,
     773528,
     655200,
-  ];
-  var brazilData = [
+  ],
+  brazilData: [
     "Brazil Nut World Production Amounts (Metric Tons)",
     21490,
     26450,
@@ -131,17 +132,18 @@ $(document).ready(function () {
     27850,
     38500,
     26100,
-  ];
+  ]
+};
   var foodId;
 
-  $("#cashew,#cashew-icon").on("click", function () {
+  $(".nut-click-icon").on("click", function (event) {
     foodId = 170571;
     apiCall();
-
+    const nutChosen = event.currentTarget.alt;
     $("#nut-data").show().fadeIn();
     $("#downArrow").css("opacity", "1");
     $("#nut-bio").css("display", "table-cell").fadeIn();
-    $(".col-sm img").removeClass("active");
+    $(".col-sm-4 img").removeClass("active");
     $("#cashew").addClass("active");
     $(".nut-links li img").removeClass("icon-active");
     $("#cashew-icon").addClass("icon-active");
@@ -161,7 +163,7 @@ $(document).ready(function () {
         x: "x",
         xFormat: "%Y",
 
-        columns: [xAxis, cashewData],
+        columns: [xAxis, nutData[nutChosen]],
         type: "bar",
       },
       axis: {
@@ -194,7 +196,7 @@ $(document).ready(function () {
     $("#nut-data").show().fadeIn();
     $("#downArrow").css("opacity", "1");
     $("#nut-bio").css("display", "table-cell").fadeIn();
-    $(".col-sm img").removeClass("active");
+    $(".col-sm-4 img").removeClass("active");
     $("#almond").addClass("active");
     $(".nut-links li img").removeClass("icon-active");
     $("#almond-icon").addClass("icon-active");
@@ -242,12 +244,12 @@ $(document).ready(function () {
   });
 
   $("#hazelnut,#hazelnut-icon").on("click", function () {
-    foodId = 170567;
+    foodId = 170581;
     apiCall();
     $("#nut-data").show().fadeIn();
     $("#downArrow").css("opacity", "1");
     $("#nut-bio").css("display", "table-cell").fadeIn();
-    $(".col-sm img").removeClass("active");
+    $(".col-sm-4 img").removeClass("active");
     $("#hazelnut").addClass("active");
     $(".nut-links li img").removeClass("icon-active");
     $("#hazel-icon").addClass("icon-active");
@@ -300,7 +302,7 @@ $(document).ready(function () {
     $("#nut-data").show().fadeIn();
     $("#downArrow").css("opacity", "1");
     $("#nut-bio").css("display", "table-cell").fadeIn();
-    $(".col-sm img").removeClass("active");
+    $(".col-sm-4 img").removeClass("active");
     $("#macadamia").addClass("active");
     $(".nut-links li img").removeClass("icon-active");
     $("#macadamia-icon").addClass("icon-active");
@@ -352,7 +354,7 @@ $(document).ready(function () {
     $("#nut-data").show().fadeIn();
     $("#downArrow").css("opacity", "1");
     $("#nut-bio").css("display", "table-cell").fadeIn();
-    $(".col-sm img").removeClass("active");
+    $(".col-sm-4 img").removeClass("active");
     $("#peanut").addClass("active");
     $(".nut-links li img").removeClass("icon-active");
     $("#peanut-icon").addClass("icon-active");
@@ -404,7 +406,7 @@ $(document).ready(function () {
     $("#nut-data").show().fadeIn();
     $("#downArrow").css("opacity", "1");
     $("#nut-bio").css("display", "table-cell").fadeIn();
-    $(".col-sm img").removeClass("active");
+    $(".col-sm-4 img").removeClass("active");
     $("#pecan").addClass("active");
     $(".nut-links li img").removeClass("icon-active");
     $("#pecan-icon").addClass("icon-active");
@@ -451,12 +453,12 @@ $(document).ready(function () {
   });
 
   $("#pistachio,#pistachio-icon").on("click", function () {
-    foodId = 170182;
+    foodId = 170185;
     apiCall();
     $("#nut-data").show().fadeIn();
     $("#downArrow").css("opacity", "1");
     $("#nut-bio").css("display", "table-cell").fadeIn();
-    $(".col-sm img").removeClass("active");
+    $(".col-sm-4 img").removeClass("active");
     $("#pistachio").addClass("active");
     $(".nut-links li img").removeClass("icon-active");
     $("#pistachio-icon").addClass("icon-active");
@@ -507,7 +509,7 @@ $(document).ready(function () {
     $("#nut-data").show().fadeIn();
     $("#downArrow").css("opacity", "1");
     $("#nut-bio").css("display", "table-cell").fadeIn();
-    $(".col-sm img").removeClass("active");
+    $(".col-sm-4 img").removeClass("active");
     $("#brazilnut").addClass("active");
     $(".nut-links li img").removeClass("icon-active");
     $("#brazilnut-icon").addClass("icon-active");
@@ -554,12 +556,12 @@ $(document).ready(function () {
   });
 
   $("#walnut,#walnut-icon").on("click", function () {
-    foodId = 170569;
+    foodId = 170187;
     apiCall();
     $("#nut-data").show().fadeIn();
     $("#downArrow").css("opacity", "1");
     $("#nut-bio").css("display", "table-cell").fadeIn();
-    $(".col-sm img").removeClass("active");
+    $(".col-sm-4 img").removeClass("active");
     $("#walnut").addClass("active");
     $(".nut-links li img").removeClass("icon-active");
     $("#walnut-icon").addClass("icon-active");
@@ -609,6 +611,7 @@ $(document).ready(function () {
     const xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
+          console.log(xhr.responseText)
           
         // Typical action to be performed when the document is ready:
         // let htmlString = "";
@@ -622,14 +625,14 @@ $(document).ready(function () {
         //             </div>`;
         // }
         
-        document.getElementById("data-container").innerHTML = xhr.responseText.foodNutrients;
+        document.getElementById("data-container").innerHTML = xhr.responseText;
       }
     };
     xhr.open(
       "GET",
       "https://api.nal.usda.gov/fdc/v1/food/" +
         foodId +
-        "?format=abridged&nutrients=203,204,205,269,291,301,303,304,305,306,307,309,api_key=DEMO_KEY",
+        "?format=abridged&nutrients=203&nutrients=204&nutrients=205&nutrients=269&nutrients=291&nutrients=301&nutrients=303&nutrients=323&nutrients=401&nutrients=606&nutrients=645&nutrients=646&api_key=d0IgDAj0JPoid4UyR93MEyBBcNSfmbW1ZAV6UcDK",
       true
     );
     xhr.send();
