@@ -135,7 +135,7 @@ $(document).ready(function () {
   var foodId;
 
   $("#cashew,#cashew-icon").on("click", function () {
-    foodId = 12085;
+    foodId = 170571;
     apiCall();
 
     $("#nut-data").show().fadeIn();
@@ -189,7 +189,7 @@ $(document).ready(function () {
   });
 
   $("#almond,#almond-icon").on("click", function () {
-    foodId = 12061;
+    foodId = 170567;
     apiCall();
     $("#nut-data").show().fadeIn();
     $("#downArrow").css("opacity", "1");
@@ -242,7 +242,7 @@ $(document).ready(function () {
   });
 
   $("#hazelnut,#hazelnut-icon").on("click", function () {
-    foodId = 12120;
+    foodId = 170567;
     apiCall();
     $("#nut-data").show().fadeIn();
     $("#downArrow").css("opacity", "1");
@@ -295,7 +295,7 @@ $(document).ready(function () {
   });
 
   $("#macadamia,#macadamia-icon").on("click", function () {
-    foodId = 12131;
+    foodId = 168598;
     apiCall();
     $("#nut-data").show().fadeIn();
     $("#downArrow").css("opacity", "1");
@@ -347,7 +347,7 @@ $(document).ready(function () {
   });
 
   $("#peanut,#peanut-icon").on("click", function () {
-    foodId = 16091;
+    foodId = 172430;
     apiCall();
     $("#nut-data").show().fadeIn();
     $("#downArrow").css("opacity", "1");
@@ -399,7 +399,7 @@ $(document).ready(function () {
   });
 
   $("#pecan,#pecan-icon").on("click", function () {
-    foodId = 12142;
+    foodId = 170182;
     apiCall();
     $("#nut-data").show().fadeIn();
     $("#downArrow").css("opacity", "1");
@@ -451,7 +451,7 @@ $(document).ready(function () {
   });
 
   $("#pistachio,#pistachio-icon").on("click", function () {
-    foodId = 12152;
+    foodId = 170182;
     apiCall();
     $("#nut-data").show().fadeIn();
     $("#downArrow").css("opacity", "1");
@@ -502,7 +502,7 @@ $(document).ready(function () {
     });
   });
   $("#brazilnut,#brazilnut-icon").on("click", function () {
-    foodId = 12078;
+    foodId = 170569;
     apiCall();
     $("#nut-data").show().fadeIn();
     $("#downArrow").css("opacity", "1");
@@ -554,7 +554,7 @@ $(document).ready(function () {
   });
 
   $("#walnut,#walnut-icon").on("click", function () {
-    foodId = 12155;
+    foodId = 170569;
     apiCall();
     $("#nut-data").show().fadeIn();
     $("#downArrow").css("opacity", "1");
@@ -606,9 +606,10 @@ $(document).ready(function () {
   });
 
   function apiCall() {
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function () {
+    const xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
+          
         // Typical action to be performed when the document is ready:
         // let htmlString = "";
         // for (let i = 0; i < results.nutrition.nutrients.length; i++) {
@@ -620,18 +621,18 @@ $(document).ready(function () {
         //                 <div class="percentOfDailyNeeds">${results.nutrition.nutrients[i].percentOfDailyNeeds}% RDA</div>
         //             </div>`;
         // }
-
-        document.getElementById("data-container").innerHTML = this.responseText;
+        
+        document.getElementById("data-container").innerHTML = xhr.responseText.foodNutrients;
       }
     };
-    xhttp.open(
+    xhr.open(
       "GET",
       "https://api.nal.usda.gov/fdc/v1/food/" +
         foodId +
-        "?api_key=DEMO_KEY",
+        "?format=abridged&nutrients=203,204,205,269,291,301,303,304,305,306,307,309,api_key=DEMO_KEY",
       true
     );
-    xhttp.send();
+    xhr.send();
   }
 
   //   fetch(

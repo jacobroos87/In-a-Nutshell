@@ -91,9 +91,7 @@ h3 {
 }
 
 #nut-selector {
-    display: inline-block;
-    overflow: auto;
-    height: 90vh;
+    height: 95vh;
 }
 
 @media (max-width: 576px) {
