@@ -354,15 +354,9 @@ footer {
     cursor: pointer;
 }
 
-
-
-
-
 .center-button h2 {
     position: relative;
-    top: 25%;
-    
-    
+    top: 25%;  
 }
 
 #joke-box {
@@ -371,8 +365,6 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 2rem;
-    
-
 }
 
 #answer-box {
@@ -381,7 +373,6 @@ footer {
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 2rem;
-    
 }
 
 #answer-button {
@@ -440,8 +431,7 @@ footer {
 }
 
 #data-container {
-    display: inherit;
-    justify-content: center;
+    display: inline-block;
 }
 /* table */
 
@@ -449,6 +439,7 @@ footer {
   border: 1px solid black;
   width: 300px;
   padding: 0.5rem;
+  margin: auto;
 }
 table {
     border-collapse: collapse;
@@ -542,4 +533,8 @@ span {
 }
 .thin-end {
   border-bottom: 1px solid black;
+}
+
+#data-center-img {
+    margin: auto;
 }

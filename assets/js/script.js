@@ -254,7 +254,7 @@ $(document).ready(function () {
         .then((response) => response.json())
         .then((response) => {
           results = response;
-          console.log(results);
+          console.log(results.foodNutrients);
 
           for (let i = 0; i < results.foodNutrients.length; i++) {
             if (
