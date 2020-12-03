@@ -1,6 +1,8 @@
 $(document).ready(function () {
   // Chart data variables
 
+  let results;
+
   var xAxis = [
     "x",
     "2010",
@@ -238,73 +240,35 @@ $(document).ready(function () {
     });
 
     function apiCall() {
-      const xhr = new XMLHttpRequest();
-      xhr.onreadystatechange = function () {
-        if (this.readyState == 4 && this.status == 200) {
-          console.log(xhr.responseText);
 
-          // Typical action to be performed when the document is ready:
-          // let htmlString = "";
-          // for (let i = 0; i < results.nutrition.nutrients.length; i++) {
-          //   htmlString += `<div class="result">
-
-          //                 <div class="title">${results.nutrition.nutrients[i].title}</div>
-          //                 <div class="amount">${results.nutrition.nutrients[i].amount}</div>
-          //                 <div class="unit">${results.nutrition.nutrients[i].unit}</div>
-          //                 <div class="percentOfDailyNeeds">${results.nutrition.nutrients[i].percentOfDailyNeeds}% RDA</div>
-          //             </div>`;
-          // }
-
-          document.getElementById("data-container").innerHTML =
-            xhr.responseText;
-        }
-      };
-      xhr.open(
-        "GET",
+      fetch(
         "https://api.nal.usda.gov/fdc/v1/food/" +
           nutData[nutChosen]["id"] +
-          "?format=abridged&nutrients=203&nutrients=204&nutrients=205&nutrients=269&nutrients=291&nutrients=301&nutrients=303&nutrients=323&nutrients=401&nutrients=606&nutrients=645&nutrients=646&api_key=d0IgDAj0JPoid4UyR93MEyBBcNSfmbW1ZAV6UcDK",
-        true
-      );
-      xhr.send();
+          "?format=abridged&nutrients=204&nutrients=606&nutrients=601&nutrients=307&nutrients=205&nutrients=291&nutrients=269&nutrients=203&nutrients=401&nutrients=328&nutrients=303&nutrients=301&nutrients=306&nutrients=305&api_key=d0IgDAj0JPoid4UyR93MEyBBcNSfmbW1ZAV6UcDK",
+        {
+          method: "GET",
+          // headers: {
+
+          // },
+        }
+      )
+        .then((response) => response.json())
+        .then((response) => {
+          results = response;
+          console.log(results);
+        
+        for (let i = 0; i < response.foodNutrients.length; i++) {
+            if (Object.values(results.foodNutrients[i]).indexOf('Total lipid (fat)') > -1) {
+                document.getElementById("fat-unit").innerHTML = results.foodNutrients[i].amount;  
+                console.log(response.foodNutrients[i].amount);        
+            }
+        }
+        })
+        .catch((err) => {
+          console.error(err);
+        });
     }
   });
-
-  //   fetch(
-  //     "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/food/ingredients/" +
-  //       foodId +
-  //       "/information?amount=10&unit=gram",
-  //     {
-  //       method: "GET",
-  //       headers: {
-  //         "x-rapidapi-key": process.env.API_KEY_HERE,
-  //         "x-rapidapi-host":
-  //           "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-  //       },
-  //     }
-  //   )
-  //     .then((response) => response.json())
-  //     .then((response) => {
-  //       results = response;
-
-  //       let htmlString = "";
-  //       for (let i = 0; i < results.nutrition.nutrients.length; i++) {
-  //         htmlString += `<div class="result">
-
-  //                         <div class="title">${results.nutrition.nutrients[i].title}</div>
-  //                         <div class="amount">${results.nutrition.nutrients[i].amount}</div>
-  //                         <div class="unit">${results.nutrition.nutrients[i].unit}</div>
-  //                         <div class="percentOfDailyNeeds">${results.nutrition.nutrients[i].percentOfDailyNeeds}% RDA</div>
-  //                     </div>`;
-  //       }
-
-  //       document.getElementById("data-container").innerHTML = htmlString;
-  //     })
-  //     .catch((err) => {
-  //       console.error(err);
-  //     });
-
-  //   };
 
   let jokeResults;
 

@@ -427,6 +427,7 @@ footer {
     font-size: 1.2rem;
     text-align: left;
     padding-left: 5px;
+    text-decoration-style: lowercase;
 }
 
 
@@ -436,4 +437,109 @@ footer {
 
 #chart {
     margin: auto;
+}
+
+#data-container {
+    display: inherit;
+    justify-content: center;
+}
+/* table */
+
+.performance-facts {
+  border: 1px solid black;
+  width: 300px;
+  padding: 0.5rem;
+}
+table {
+    border-collapse: collapse;
+    
+}
+
+.performance-facts__title {
+  
+  font-size: 2rem;
+  margin: auto;
+}
+.performance-facts__header {
+  border-bottom: 10px solid black;
+  padding: 0 0 0.25rem 0;
+  margin: 0 0 0.5rem 0;
+}
+.performance-facts__header p {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.performance-facts__table {
+  width: 100%;
+}
+thead tr th td {
+      border: 0;
+}
+
+th {
+    
+    text-align: left;
+    padding: 0.25rem 0;
+    border-top: 1px solid black;
+    white-space: nowrap;
+}
+
+th b {
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding-right: 5px;
+}
+
+td {
+    text-align: right;
+}
+
+  
+.blank-cell {
+    width: 1rem;
+    border-top: 0;
+}
+.thick-row th td {
+      border-top-width: 5px;
+}
+  
+
+.small-info {
+  font-size: 1rem;
+}
+
+.performance-facts__table--small {
+
+  border-bottom: 1px solid #999;
+  margin: auto;
+  font-size: 0.9rem;
+
+}
+thead tr {
+    border-bottom: 1px solid black;
+}
+
+th,td {
+    border: 0;
+    padding: 0;
+}
+
+.performance-facts__table--grid {
+  margin: auto;
+}
+
+span {
+    padding-right: 4px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.thick-end {
+  border-bottom: 10px solid black;
+}
+.thin-end {
+  border-bottom: 1px solid black;
 }
