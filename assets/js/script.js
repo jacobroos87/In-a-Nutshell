@@ -244,7 +244,7 @@ $(document).ready(function () {
       fetch(
         "https://api.nal.usda.gov/fdc/v1/food/" +
           nutData[nutChosen]["id"] +
-          "?format=abridged&nutrients=204&nutrients=606&nutrients=601&nutrients=307&nutrients=205&nutrients=291&nutrients=269&nutrients=203&nutrients=401&nutrients=328&nutrients=303&nutrients=301&nutrients=306&nutrients=305&api_key=d0IgDAj0JPoid4UyR93MEyBBcNSfmbW1ZAV6UcDK",
+          "?format=abridged&nutrients=204&nutrients=606&nutrients=601&nutrients=307&nutrients=205&nutrients=291&nutrients=269&nutrients=203&nutrients=401&nutrients=320&nutrients=303&nutrients=306&nutrients=305&nutrients=301&api_key=d0IgDAj0JPoid4UyR93MEyBBcNSfmbW1ZAV6UcDK",
         {
           method: "GET",
           // headers: {
@@ -256,12 +256,40 @@ $(document).ready(function () {
         .then((response) => {
           results = response;
           console.log(results);
+          
         
-        for (let i = 0; i < response.foodNutrients.length; i++) {
+        for (let i = 0; i < results.foodNutrients.length; i++) {
             if (Object.values(results.foodNutrients[i]).indexOf('Total lipid (fat)') > -1) {
-                document.getElementById("fat-unit").innerHTML = results.foodNutrients[i].amount;  
-                console.log(response.foodNutrients[i].amount);        
-            }
+                document.getElementById("fat-unit").innerHTML = results.foodNutrients[i].amount + "g";          
+            } else if (Object.values(results.foodNutrients[i]).indexOf('Fatty acids, total saturated') > -1) {
+                document.getElementById("satfat-unit").innerHTML = results.foodNutrients[i].amount + "g";
+            } else if (Object.values(results.foodNutrients[i]).indexOf('Cholesterol') > -1) {
+                document.getElementById("chol-unit").innerHTML = results.foodNutrients[i].amount + "mg";
+            } else if (Object.values(results.foodNutrients[i]).indexOf('Sodium, Na') > -1) {
+                document.getElementById("sodium-unit").innerHTML = results.foodNutrients[i].amount + "mg";
+            } else if (Object.values(results.foodNutrients[i]).indexOf('Carbohydrate, by difference') > -1) {
+                document.getElementById("carb-unit").innerHTML = results.foodNutrients[i].amount + "g";
+            } else if (Object.values(results.foodNutrients[i]).indexOf('Fiber, total dietary') > -1) {
+                document.getElementById("fibre-unit").innerHTML = results.foodNutrients[i].amount + "g";
+            } else if (Object.values(results.foodNutrients[i]).indexOf('Sugars, total including NLEA') > -1) {
+                document.getElementById("sugar-unit").innerHTML = results.foodNutrients[i].amount + "g";
+            } else if (Object.values(results.foodNutrients[i]).indexOf('Protein') > -1) {
+                document.getElementById("protein-unit").innerHTML = results.foodNutrients[i].amount + "g";
+            } else if (Object.values(results.foodNutrients[i]).indexOf('Vitamin A, RAE') > -1) {
+                document.getElementById("vit-a-unit").innerHTML = results.foodNutrients[i].amount + "%";
+            } else if (Object.values(results.foodNutrients[i]).indexOf('Vitamin C, total ascorbic acid') > -1) {
+                document.getElementById("vit-c-unit").innerHTML = results.foodNutrients[i].amount + "%";
+            } else if (Object.values(results.foodNutrients[i]).indexOf('Calcium, Ca') > -1) {
+                document.getElementById("calcium-unit").innerHTML = results.foodNutrients[i].amount + "mg";
+                document.getElementById("calcium-rda").innerHTML = Math.round(results.foodNutrients[i].amount / 1300 * 100)  + "%";
+            } else if (Object.values(results.foodNutrients[i]).indexOf('Iron, Fe') > -1) {
+                document.getElementById("iron-unit").innerHTML = results.foodNutrients[i].amount + "mg";
+            } else if (Object.values(results.foodNutrients[i]).indexOf('Potassium, K') > -1) {
+                document.getElementById("pota-unit").innerHTML = results.foodNutrients[i].amount + "mg";
+            } else if (Object.values(results.foodNutrients[i]).indexOf('Phosphorus, P') > -1) {
+                document.getElementById("phos-unit").innerHTML = results.foodNutrients[i].amount + "mg";
+            } 
+            
         }
         })
         .catch((err) => {
