@@ -427,6 +427,7 @@ footer {
 } 
 
 #chart {
+    padding-top: 40px;
     margin: auto;
 }
 
@@ -537,4 +538,11 @@ span {
 
 #data-center-img {
     margin: auto;
+}
+
+#data-center-img img {
+    border-radius: 50%;
+    padding: 30px 30px;
+    border: 8px solid rgba(78, 124, 72, 0.808);
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

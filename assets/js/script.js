@@ -199,6 +199,7 @@ $(document).ready(function () {
     $("#nut-bio").css("display", "table-cell").fadeIn();
     $(".nut-click-icon").removeClass("active");
     $(event.currentTarget).addClass("active");
+    $("#data-center-img").html("<img src='assets/images/" + nutChosen + ".png'/>");
     $(".info-container")
       .hide()
       .html(nutData[nutChosen]["nutInfo"])
