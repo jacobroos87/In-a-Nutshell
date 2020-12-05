@@ -20,6 +20,7 @@ h1 {
 
 h2 {
     padding: 25px;
+    margin: 0;
 }
 
 h3 {
@@ -50,8 +51,8 @@ h3 {
 
 @media (max-width: 576px) {
     .col-sm-4 img {
-        width: 85px;
-        height: 85px;
+        width: 105px;
+        height: 105px;
     }
 }
 
@@ -159,12 +160,7 @@ h3 {
     padding-top: 25px;
     padding-bottom: 40px;
     background-color: rgba(226, 208, 148, 0.842);
-    
-
-
 }
-
-
 
 form {
     width: 60%;
@@ -189,6 +185,10 @@ form {
 
 #nut-bio p {
     padding:0 100px;
+}
+
+.info-container h3 {
+    padding-top: 25px;
 }
 
 @media (max-width: 576px) {
@@ -268,6 +268,10 @@ footer {
 .nut-icons {
     padding-bottom: 20px;
     padding-top: 50px;
+}
+
+.nut-links {
+    margin: 0;
 }
 
 .nut-links li img {
@@ -386,8 +390,13 @@ footer {
 }
 
 .c3-legend-item {
-    font-size: 1.1rem;
+    font-size: 1rem;
     text-align: center;
+}
+@media (max-width: 576px) {
+    .c3-legend-item {
+        font-size: 0.9rem;
+    }
 }
 
 .result {
@@ -427,9 +436,27 @@ footer {
 } 
 
 #chart {
-    padding-top: 40px;
+    height: 700px;
+    width: 75%;
+    padding-top: 65px;
     margin: auto;
 }
+
+@media (max-width: 576px) {
+    #chart {
+        height: 450px;
+        padding-bottom: 10px;
+        padding-top: 0;
+        margin-right: 10px;
+        margin-left: 0;
+        width: 90%;
+    }
+}
+
+.c3-legend-item-tile {
+    display: none;
+}
+
 
 #data-container {
     display: inline-block;
@@ -438,10 +465,23 @@ footer {
 
 .performance-facts {
   border: 1px solid black;
-  width: 300px;
+  width: 400px;
   padding: 0.5rem;
   margin: auto;
 }
+
+@media (max-width: 768px) {
+  .performance-facts {
+      width: 400px;
+  }
+}
+
+@media (max-width: 576px) {
+  .performance-facts {
+      width: 300px;
+  }
+}
+
 table {
     border-collapse: collapse;
     
@@ -538,11 +578,20 @@ span {
 
 #data-center-img {
     margin: auto;
+    padding: 35px 0;
+}
+
+@media (max-width: 768px) {
+    #data-center-img {
+        display: none;
+    }
 }
 
 #data-center-img img {
-    border-radius: 50%;
-    padding: 30px 30px;
+    width: 450px;
+    height: 450px;
+    border-radius: 45%;
+    padding: 75px 0;
     border: 8px solid rgba(78, 124, 72, 0.808);
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }

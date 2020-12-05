@@ -206,10 +206,7 @@ $(document).ready(function () {
       .fadeIn("slow");
 
     var chart = c3.generate({
-      size: {
-        height: 600,
-        width: 500,
-      },
+      
       data: {
         x: "x",
         xFormat: "%Y",
