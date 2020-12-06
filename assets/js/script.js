@@ -3,6 +3,8 @@ $(document).ready(function () {
 
   let results;
 
+  // Data objects for graph data and nut bio
+
   var xAxis = [
     "x",
     "2010",
@@ -190,6 +192,9 @@ $(document).ready(function () {
     },
   };
 
+  // On click function to show info and data divs, including apiCall to fill nutrition label.
+  // The functions and events below are all linked to the alt text of the images
+
   $(".nut-click-icon").on("click", function (event) {
     const nutChosen = event.currentTarget.alt;
     apiCall();
@@ -204,6 +209,8 @@ $(document).ready(function () {
       .hide()
       .html(nutData[nutChosen]["nutInfo"])
       .fadeIn("slow");
+
+  // C3.js graph calling data from the data objects at line 221
 
     var chart = c3.generate({
       
@@ -237,6 +244,8 @@ $(document).ready(function () {
       },
     });
 
+  // Api Call to USDA FDC database for food nutrition values.  The url data is changed with each click and alt text for the images used as reference
+
     function apiCall() {
       fetch(
         "https://api.nal.usda.gov/fdc/v1/food/" +
@@ -254,7 +263,11 @@ $(document).ready(function () {
           results = response;
           console.log(results.foodNutrients);
 
+  // For loop to iterate through the results 
+
           for (let i = 0; i < results.foodNutrients.length; i++) {
+
+  // if & else if loops to fill in data for the nutrition label.  Math added with current RDA data to calculate %
             if (
               Object.values(results.foodNutrients[i]).indexOf(
                 "Total lipid (fat)"
@@ -377,10 +390,10 @@ $(document).ready(function () {
                 "%";
             }
 
-            let carbs = Object.values(results.foodNutrients[i]).indexOf(
-                "Carbohydrate, by difference")
-            let fats = Object.values(results.foodNutrients[i]).indexOf(
-                "Total lipid (fat)")
+  // Section to do math for calories 
+
+            let carbs = Object.values(results.foodNutrients[i]).indexOf("Carbohydrate, by difference")
+            let fats = Object.values(results.foodNutrients[i]).indexOf("Total lipid (fat)")
             let proteins = Object.values(results.foodNutrients[i]).indexOf("Protein") > -1
                 console.log(proteins);
             document.getElementById("calories").innerHTML = Math.round((carbs * 4) + (fats * 9) + (proteins * 4))
@@ -391,6 +404,8 @@ $(document).ready(function () {
         });
     }
   });
+
+  // Joke generator using a fetch call to a local JSON file with joke data. if loop with a counter to iterate through jokes. 
 
   let jokeResults;
 
@@ -415,6 +430,8 @@ $(document).ready(function () {
           $("#answer-box").hide();
           $("#answer-button").show();
         }
+
+  // If loop to print the joke data in the relevant divs
 
         if (counter < jokeResults.length) {
           document.getElementById("joke-box").innerHTML =
