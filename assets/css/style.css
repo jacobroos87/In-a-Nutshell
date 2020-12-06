@@ -335,6 +335,8 @@ footer {
 
 .row {
     position: relative;
+    align-content: center;
+    justify-content: center;
 }
 
 .center-button {
