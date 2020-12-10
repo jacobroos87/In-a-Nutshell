@@ -22,7 +22,13 @@
       integrity="sha512-GQSxWe9Cj4o4EduO7zO9HjULmD4olIjiQqZ7VJuwBxZlkWaUFGCxRkn39jYnD2xZBtEilm0m4WBG7YEmQuMs5Q=="
       crossorigin="anonymous"
     />
+
     <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+    (function() {
+    emailjs.init("user_5OGKjNpFoPyKDbBVzTMSw");
+    })();</script>
     <title>In a Nutshell</title>
   </head>
 
@@ -503,27 +509,28 @@
       <div class="form-container">
         <h2 class="section-banner">- Contact Us -</h2>
         <div class="form">
-          <form>
+          <form onsubmit="return sendMail(this);">
             <div class="row">
               <div class="col">
-                <label for="formInput1">First Name</label>
-                <input type="text" class="form-control" id="formInput1" />
+                <label for="firstname">First Name</label>
+                <input name="firstname" type="text" class="form-control" id="firstname" />
               </div>
               <div class="col">
-                <label for="formInput2">Last Name</label>
-                <input type="text" class="form-control" id="formInput2" />
+                <label for="lastname">Last Name</label>
+                <input name="lastname" type="text" class="form-control" id="lastname" />
               </div>
             </div>
             <div class="form-group">
-              <label for="formInput3">Email address</label>
-              <input type="email" class="form-control" id="formInput3" />
+              <label for="emailaddress">Email address</label>
+              <input name="emailaddress" type="email" class="form-control" id="emailaddress" />
             </div>
 
             <div class="form-group">
-              <label for="exampleFormControlTextarea1">Message:</label>
+              <label for="formcomment">Message:</label>
               <textarea
+                name="formcomment"
                 class="form-control"
-                id="exampleFormControlTextarea1"
+                id="formcomment"
                 rows="5"
               ></textarea>
             </div>
@@ -578,7 +585,7 @@
         </div>
       </div>
     </footer>
-
+    
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -600,7 +607,9 @@
       integrity="sha512-+IpCthlNahOuERYUSnKFjzjdKXIbJ/7Dd6xvUp+7bEw0Jp2dg6tluyxLs+zq9BMzZgrLv8886T4cBSqnKiVgUw=="
       crossorigin="anonymous"
     ></script>
-
-    <script src="assets/js/script.js"></script>
+    <script
+     src="assets/js/sendEmail.js"></script>
+    <script
+     src="assets/js/script.js"></script>
   </body>
 </html>
