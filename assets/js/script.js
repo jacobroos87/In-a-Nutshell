@@ -219,7 +219,7 @@ $(document).ready(function () {
         const nutChosen = event.currentTarget.alt;
         apiCall();
 
-        $("#nut-data, #joke-generator, #contact-form").show().fadeIn();
+        $("#nut-data, #joke-generator, #contact-form-section").show().fadeIn();
         $("#downArrow, .navbar-nav").animate({
             opacity: '1',
             color: "white",

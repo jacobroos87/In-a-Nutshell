@@ -1,15 +1,13 @@
-function sendMail(contactForm) {
-        emailjs.send("gmail", "nutshell", {
-            "from_name": contactForm.firstname.value + contactForm.lastname.value,
-            "from_email": contactForm.emailaddress.value,
-            "form_comment": contactForm.formcomment.value,
-        })
-            .then(
-                function (response) {
-                    console.log("SUCCESS", response);
-                },
-                function (error) {
-                    console.log("FAILED", error)
-                }
-            )
-    }
+$(document).ready(function () {
+    $(document).on('submit', '#contact_form', function (event) {
+        event.preventDefault();
+        emailjs.sendForm('service_34hzmeb', 'contact_form', '#contact_form')
+            .then(function () {
+                $("#mySuccessModal").modal("show");
+                console.log("SUCCESS");
+            }, function (error) {
+                alert("Your submission failed please try again")
+                console.log("FAILED", error)
+            })
+    })
+})
