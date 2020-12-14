@@ -4,6 +4,7 @@ $(document).ready(function () {
         emailjs.sendForm('service_34hzmeb', 'contact_form', '#contact_form')
             .then(function () {
                 $("#mySuccessModal").modal("show");
+                $("#contact_form")[0].reset();
                 console.log("SUCCESS");
             }, function (error) {
                 alert("Your submission failed please try again")
