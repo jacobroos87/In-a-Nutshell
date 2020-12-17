@@ -220,7 +220,7 @@ $(document).ready(function () {
         apiCall();
 
         $("#nut-data, #joke-generator, #contact-form-section").show().fadeIn();
-        $("#downArrow, .navbar-nav, .scroll-down").animate({
+        $("#downArrow, .navbar-nav, .scroll-down, .navbar-toggler").animate({
             opacity: '1',
             color: "white",
             }, 1000 );

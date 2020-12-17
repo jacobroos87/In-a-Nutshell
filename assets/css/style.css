@@ -75,12 +75,12 @@ h5 {
 }
 
 .col-sm-4 img {
-    height: 250px;
-    width: 260px;
+    height: 220px;
+    width: 230px;
     border-radius: 45%;
-    padding: 40px 20px;
+    padding: 30px 10px;
     background-color: rgba(78, 124, 72, 0.808);
-    margin: 30px 30px;
+    margin: 10px 10px;
     border: 8px solid rgba(78, 124, 72, 0.808);
     box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     cursor: pointer;
@@ -154,7 +154,7 @@ h5 {
 }
 
 #nut-selector {
-    height: 95vh;
+    height: 85vh;
     width: 100%;
     display: inline-block;
 }
@@ -163,13 +163,13 @@ h5 {
 
 @media (max-width: 768px) {
     #nut-selector {
-    height: 80vh;
+    height: 70vh;
 }
 }
 
 @media (max-width: 576px) {
     #nut-selector {
-    height: 90vh;
+    height: 82vh;
     }
 }
 
@@ -226,6 +226,10 @@ h5 {
 .navbar {
     margin-bottom: 25px;
     background-color: #a06e19;
+}
+
+.navbar-toggler {
+    opacity: 0;
 }
 
 .nav-link {
@@ -320,6 +324,15 @@ footer {
   -moz-transition: all 0.2s ease-in-out;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
+}
+
+@media (max-width: 320px) {
+    .social-links li a i {
+        width: 40px;
+        height: 40px;
+        padding: 15px 0;
+        font-size: 20px;
+    }
 }
 
 .social-links li a i:hover {
