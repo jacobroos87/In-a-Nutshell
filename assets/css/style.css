@@ -51,6 +51,11 @@ body {
     color: #000;
 }
 
+.navbar-brand:hover {
+    color: white;
+    transition: 0.2s ease-in-out;
+}
+
 .fa-bars:before {
     font-size: 1.5rem;
 }
@@ -460,7 +465,9 @@ footer {
     font-size: 1rem;
     text-align: center;
 }
-@media (max-width: 576px) {
+
+
+@media (max-width: 1280px) {
     .c3-legend-item {
         font-size: 0.8rem;
     }
@@ -472,6 +479,14 @@ footer {
     padding-top: 65px;
     margin: auto;
 }
+
+@media (max-width: 1280px) {
+    #chart {
+        width: 90%;
+    }
+}
+
+
 
 #chart svg g .c3-legend-item text {
     transform: translate(25px, 5px);
@@ -518,9 +533,9 @@ footer {
   margin: auto;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1280px) {
   .performance-facts {
-      width: 400px;
+      width: 350px;
       margin-bottom: 15px;
   }
 }
