@@ -7,7 +7,8 @@ $(document).ready(function () {
                 $("#contact_form")[0].reset();
                 console.log("Form Submission SUCCESS");
             }, function (error) {
-                alert("Your submission failed please try again")
+                $("#myErrorModal").modal("show");
+                $("#contact_form")[0].reset();
                 console.log("Form Submission FAILED", error)
             })
     })
