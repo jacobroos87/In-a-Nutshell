@@ -46,30 +46,23 @@ body {
 .navbar-brand {
     font-family: "Concert One", sans-serif;
     font-weight: 400;
-    font-size: 41px;
     padding: 0;
     margin: 0;
     color: #000;
-}
-
-@media (min-width:992px) {
-    .navbar-brand {
-        font-size: 3rem;
-    }
 }
 
 .fa-bars:before {
     font-size: 1.5rem;
 }
 
+h1 {
+    font-size: clamp(1.8rem, -0.875rem + 8.333333vw, 2.8rem);
+}
 
 h2 {
     padding: 25px;
     margin: 0;
-}
-
-h3 {
-    margin: 0;
+    font-size: clamp(1.4rem, -0.875rem + 8.333333vw, 1.8rem);
 }
 
 h5 {
@@ -90,7 +83,7 @@ h5 {
 
 @media (max-width:992px) {
     .col-sm-4 img {
-        width: 170px;
+        width: 180px;
         height: 170px;
         margin: 10px 10px;
         padding: 15px 5px;
@@ -102,6 +95,15 @@ h5 {
     .col-sm-4 img {
         width: 100px;
         height: 100px;
+    }
+}
+
+@media (max-width: 320px) {
+    .col-sm-4 img {
+        width: 80px;
+        height: 80px;
+        margin: 5px 5px;
+        
     }
 }
 
@@ -148,6 +150,7 @@ h5 {
 
 #nut-selector {
     height: 95vh;
+    width: 100%;
     display: inline-block;
 }
 
@@ -327,8 +330,8 @@ footer {
 }
 
 .nut-links {
-    margin: 0;
-    padding-top: 25px;
+    margin: auto;
+    padding: 0 30px;
 }
 
 .nut-links li img {
@@ -358,7 +361,7 @@ footer {
 
 #nut-bio {
     
-    font-size: 1.5rem;
+    font-size: clamp(1rem, -0.875rem + 8.333333vw, 1.5rem);
     margin: auto;
     text-align: center;
     width: 100vw;
@@ -446,13 +449,20 @@ footer {
     text-align: center;
 }
 
+@media (max-width: 576px) {
+    .c3 svg {
+    font-size: 0.8rem;
+    }
+}
+
+
 .c3-legend-item {
     font-size: 1rem;
     text-align: center;
 }
 @media (max-width: 576px) {
     .c3-legend-item {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
     }
 }
 
@@ -462,6 +472,18 @@ footer {
     padding-top: 65px;
     margin: auto;
 }
+
+#chart svg g .c3-legend-item text {
+    transform: translate(25px, 5px);
+}
+
+@media (max-width: 576px) {
+    #chart svg g .c3-legend-item text {
+    transform: translate(3px, 2px);
+    }
+}
+
+
 
 @media (max-width: 576px) {
     #chart {
