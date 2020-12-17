@@ -220,7 +220,7 @@ $(document).ready(function () {
         apiCall();
 
         $("#nut-data, #joke-generator, #contact-form-section").show().fadeIn();
-        $("#downArrow, .navbar-nav").animate({
+        $("#downArrow, .navbar-nav, .scroll-down").animate({
             opacity: '1',
             color: "white",
             }, 1000 );
@@ -291,6 +291,7 @@ $(document).ready(function () {
                     for (let i = 0; i < results.foodNutrients.length; i++) {
 
                         // if & else if loops to fill in data for the nutrition label.  Math added with current RDA data to calculate %
+                        
                         if (
                             Object.values(results.foodNutrients[i]).indexOf(
                                 "Total lipid (fat)"

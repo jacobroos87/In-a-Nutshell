@@ -5,10 +5,10 @@ $(document).ready(function () {
             .then(function () {
                 $("#mySuccessModal").modal("show");
                 $("#contact_form")[0].reset();
-                console.log("SUCCESS");
+                console.log("Form Submission SUCCESS");
             }, function (error) {
                 alert("Your submission failed please try again")
-                console.log("FAILED", error)
+                console.log("Form Submission FAILED", error)
             })
     })
 })
