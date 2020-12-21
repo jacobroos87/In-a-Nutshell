@@ -287,15 +287,15 @@ footer {
 }
 .nut-icons {
 	padding-bottom: 20px;
-	padding-top: 50px;
+    padding-top: 50px;
 }
 .nut-links {
 	margin: auto;
-	padding: 0 30px;
+    padding: 0 30px;
 }
 .nut-links li img {
     height: 45px;
-    width: 50px;
+    width: 55px;
 	border-radius: 50%;
 	padding: 5px 5px;
 	font-size: 25px;
