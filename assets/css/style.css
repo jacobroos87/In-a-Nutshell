@@ -6,7 +6,8 @@
 body {
 	font-family: "PT Sans", sans-serif;
 	font-weight: 400;
-	text-align: center;
+    text-align: center;
+    overflow-x: hidden; /* --  Overflow issue was fixed by hiding X -- */ 
 }
 #back-to-top {
 	display: none;
