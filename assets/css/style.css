@@ -7,8 +7,25 @@ body {
 	font-family: "PT Sans", sans-serif;
 	font-weight: 400;
     text-align: center;
-    overflow-x: hidden; /* --  Overflow issue was fixed by hiding X -- */ 
 }
+
+.row {
+	position: relative;
+	align-content: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid {
+    margin: 0;
+    padding: 0;
+}
+
+#nut-selector {
+    padding: 0;
+}
+
 #back-to-top {
 	display: none;
 	position: fixed;
@@ -29,8 +46,9 @@ body {
 	}
 }
 #nut-selector .container .row {
-	flex-wrap: nowrap;
+    flex-wrap: nowrap;
 }
+
 #back-to-top:hover,
 #back-to-top:focus {
 	color: #fff;
@@ -286,6 +304,11 @@ footer {
 	transform: translateY(-8px);
 	box-shadow: 0 5px 0 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+.social-links {
+    margin: revert;
+}
+
 .nut-icons {
 	padding-bottom: 20px;
     padding-top: 50px;
@@ -342,11 +365,7 @@ footer {
 		height: 50vh;
 	}
 }
-.row {
-	position: relative;
-	align-content: center;
-	justify-content: center;
-}
+
 .center-button {
 	height: 200px;
 	width: 200px;
@@ -407,7 +426,8 @@ footer {
 	height: 700px;
 	width: 75%;
 	padding-top: 65px;
-	margin: auto;
+    margin: auto;
+    margin-left: 15px;
 }
 @media (max-width: 1280px) {
 	#chart {
@@ -427,7 +447,7 @@ footer {
 		height: 450px;
 		padding-bottom: 10px;
 		padding-top: 0;
-		margin-right: 10px;
+		/* margin-right: 10px; */
 		margin-left: 0;
 		width: 90%;
 	}
@@ -534,6 +554,7 @@ span {
 .thin-end {
 	border-bottom: 1px solid black;
 }
+
 #data-center-img {
 	margin: auto;
 	padding: 35px 0;
@@ -565,4 +586,8 @@ span {
 }
 .navbar-nav {
 	opacity: 0;
+}
+
+div.col-lg-4.col-sm-12 {
+    width: auto;
 }
