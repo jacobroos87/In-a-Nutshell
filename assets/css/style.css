@@ -113,7 +113,7 @@ h3 {
 }
 
 h4 {
-    font-size: clamp(1.1rem, -0.875rem + 8.333333vw, 1.6rem);
+    font-size: clamp(1rem, -0.875rem + 8.333333vw, 1.2rem);
 }
 
 h5 {
@@ -136,6 +136,14 @@ h5 {
 	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	cursor: pointer;
 }
+
+@media (max-width: 1600px) {
+    .col-sm-4 img {
+        height: 170px;
+        width: 170px;
+    }
+}
+
 @media (max-width: 992px) {
 	.col-sm-4 img {
 		width: 120px;
