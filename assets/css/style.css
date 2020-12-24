@@ -1,13 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Concert+One:wght@400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400&display=swap');
- html {
-	scroll-behavior: smooth;
+html {
+    scroll-behavior: smooth;
 }
 body {
 	font-family: "PT Sans", sans-serif;
 	font-weight: 400;
     text-align: center;
+    height: 100vh;
+    position: relative;
 }
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+.navbar {
+    height: 8vh;
+}
+
 
 .row {
 	position: relative;
@@ -22,8 +33,15 @@ body {
     padding: 0;
 }
 
-#nut-selector {
-    padding: 0;
+.about ul {
+    display: block;
+    text-align: left;
+    
+}
+
+.steps {
+    width: 50%;
+    margin: auto;
 }
 
 #back-to-top {
@@ -78,6 +96,11 @@ h2 {
 	margin: 0;
 	font-size: clamp(1.4rem, -0.875rem + 8.333333vw, 1.8rem);
 }
+
+h4 {
+    font-size: clamp(1.1rem, -0.875rem + 8.333333vw, 1.6rem);
+}
+
 h5 {
 	padding: 0 15px;
 }
@@ -94,8 +117,8 @@ h5 {
 }
 @media (max-width: 992px) {
 	.col-sm-4 img {
-		width: 180px;
-		height: 170px;
+		width: 120px;
+		height: 120px;
 		margin: 10px 10px;
 		padding: 15px 5px;
 	}
@@ -150,20 +173,42 @@ h5 {
 	}
 }
 #nut-selector {
-	height: 85vh;
-	width: 100%;
-	display: inline-block;
+    width: 100%;
+    height: 85vh;
+    padding: 0;
 }
+
+#nut-selector .about {
+    width: 50%;
+}
+
+#nut-selector .selector {
+    width: 50%;
+    height: 100%;
+    
+}
+
 @media (max-width: 768px) {
-	#nut-selector {
-		height: 70vh;
-	}
+    #nut-selector .about {
+        width: 80%;
+        font-size: 1rem;
+    }
 }
+
+@media (max-width: 768px) {
+    #nut-selector .selector {
+        width: 70%;
+        padding-bottom: 25px;
+    }
+}
+
 @media (max-width: 576px) {
-	#nut-selector {
-		height: 82vh;
-	}
+    #nut-selector .selector, #nut-selector .about {
+        width: 100%;
+        padding-bottom: 25px;
+    }
 }
+
 @media (max-width: 576px) {
 	.navbar.navbar-expand-lg {
 		margin-bottom: 5px;
@@ -178,6 +223,8 @@ h5 {
 		padding-bottom: 15px;
 	}
 }
+
+
 #downArrow {
 	font-size: 3.5rem;
 	color: #a06e19;
@@ -187,8 +234,9 @@ h5 {
 	text-shadow: 2px 2px rgba(0, 0, 0, 0.19);
 }
 .scroll-down {
-	opacity: 0;
-	margin-top: 10px;
+    width: 100%;
+    margin-top: 10px;
+    display: none;
 }
 @keyframes arrow {
 	0% {
@@ -242,7 +290,8 @@ form {
 	}
 }
 #nut-bio {
-	display: block;
+    display: block;
+    
 }
 #nut-bio p {
 	padding: 0 100px;
@@ -265,10 +314,12 @@ form {
 }
 footer {
 	background-color: #a06e19;
-	color: #fafafa;
+    color: #fafafa;
+    height: 5vh;
 	min-height: 80px;
 	padding-top: 25px;
-	text-align: center;
+    text-align: center;
+    
 }
 @media (max-width: 576px) {
 	footer {
@@ -377,6 +428,16 @@ footer {
 	background-color: rgb(255, 255, 255);
 	z-index: 1000;
 }
+
+@media (max-width: 576px) {
+    .center-button {
+        height: 120px;
+        width: 120px;
+        display: flex;
+        align-content: center;
+        justify-content: center;
+    }
+}
 .center-button:hover {
 	box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	zoom: 1.1;
@@ -386,6 +447,15 @@ footer {
 	position: relative;
 	top: 25%;
 }
+
+@media (max-width: 576px) {
+    .center-button h2 {
+        top: 17%;
+        font-size: 1.3rem;
+    }
+}
+
+
 #joke-box {
 	position: absolute;
 	top: 50%;
@@ -400,6 +470,13 @@ footer {
 	transform: translate(-50%, -50%);
 	font-size: 2rem;
 }
+
+@media (max-width: 576px) {
+    #joke-box, #answer-box {
+        font-size: 1.5rem;
+    }
+}
+
 #answer-button {
 	display: none;
 }

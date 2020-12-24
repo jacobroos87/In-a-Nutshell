@@ -219,8 +219,8 @@ $(document).ready(function () {
         const nutChosen = event.currentTarget.alt;
         apiCall();
 
-        $("#nut-data, #joke-generator, #contact-form-section").show().fadeIn();
-        $("#downArrow, .navbar-nav, .scroll-down, .navbar-toggler").animate({
+        $("#nut-data, #joke-generator, #contact-form-section, .scroll-down").show().fadeIn();
+        $("#downArrow, .navbar-nav, .navbar-toggler").animate({
             opacity: '1',
             color: "white",
             }, 1000 );
