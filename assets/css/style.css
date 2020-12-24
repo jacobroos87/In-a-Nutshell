@@ -303,9 +303,10 @@ h5 {
 		font-size: 2rem;
 	}
 }
-.navbar {
+#navbarId {
     background-color: #a06e19;
 }
+
 .navbar-toggler {
 	opacity: 0;
 }

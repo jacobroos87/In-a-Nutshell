@@ -1,4 +1,16 @@
 $(document).ready(function () {
+
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+        let currentScrollPos = window.pageYOffset;
+        if (prevScrollpos > currentScrollPos) {
+            document.getElementById("navbarId").style.top = "0";
+        } else {
+            document.getElementById("navbarId").style.top = "-65px";
+        }
+        prevScrollpos = currentScrollPos;
+    }
+
     // Chart data variables
 
     let results;
@@ -197,7 +209,7 @@ $(document).ready(function () {
 
     const backToTopBtn = document.querySelector("#back-to-top");
     const windowSize = $(window).width();
-    
+
     window.addEventListener("scroll", scrollFunction);
 
     function scrollFunction() {
@@ -212,7 +224,7 @@ $(document).ready(function () {
     backToTopBtn.addEventListener("click", backToTop);
 
     function backToTop() {
-        window.scrollTo(0,0);
+        window.scrollTo(0, 0);
     }
 
     $(".nut-click-icon").on("click", function (event) {
@@ -223,7 +235,7 @@ $(document).ready(function () {
         $("#downArrow, .navbar-nav, .navbar-toggler").animate({
             opacity: '1',
             color: "white",
-            }, 1000 );
+        }, 1000);
         $("#nut-bio").css("display", "table-cell").fadeIn();
         $(".nut-click-icon").removeClass("active");
         $(event.currentTarget).addClass("active");
@@ -284,14 +296,14 @@ $(document).ready(function () {
                 .then((response) => response.json())
                 .then((response) => {
                     results = response;
-                    
+
 
                     // For loop to iterate through the results 
 
                     for (let i = 0; i < results.foodNutrients.length; i++) {
 
                         // if & else if loops to fill in data for the nutrition label.  Math added with current RDA data to calculate %
-                        
+
                         if (
                             Object.values(results.foodNutrients[i]).indexOf(
                                 "Total lipid (fat)"
