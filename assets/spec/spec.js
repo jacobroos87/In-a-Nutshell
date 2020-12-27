@@ -9,6 +9,17 @@ describe("Form submission test", () => {
     })
 })
 
+describe("fdcApi call test", () => {
+    it("Should call the fdcApi", () => {
+        const nutChosen = "170571";
+        const dataPromise = fdcApiCall(nutChosen);
+        const expectedDescription = "Nuts, cashew nuts, dry roasted, without salt added"
+        return dataPromise.then((response) => {
+            expect(response.description).toBe(expectedDescription);
+        })
+    })
+})
+
 describe("Nut selector function tests", () => {
     it("Should show the lower sections", () => {
         $(".nut-click-icon").trigger("click");

@@ -1,8 +1,8 @@
 $(document).ready(function () {
 
     (function () {
-            emailjs.init("user_5OGKjNpFoPyKDbBVzTMSw");
-        })();
+        emailjs.init("user_5OGKjNpFoPyKDbBVzTMSw");
+    })();
 
     let prevScrollpos = window.pageYOffset;
     window.onscroll = function () {
@@ -241,15 +241,16 @@ $(document).ready(function () {
     }
 
     $('#myDropdown').on('shown.bs.dropdown', function () {
-      $(".dropdown .dropdown-toggle").css("background-color","#f0c20a")
+        $(".dropdown .dropdown-toggle").css("background-color", "#f0c20a")
     })
     $('#myDropdown').on('hide.bs.dropdown', function () {
-      $(".dropdown .dropdown-toggle").css("background-color","#a06e19")
+        $(".dropdown .dropdown-toggle").css("background-color", "#a06e19")
     })
 
     $(".nut-click-icon").on("click", function (event) {
         const nutChosen = event.currentTarget.alt;
-        apiCall();
+        const dataPromise = fdcApiCall(nutData[nutChosen]["id"]);
+        foodLabel(dataPromise);
 
         $("#nut-data, #joke-generator, #contact-form-section, .scroll-down, footer").show().fadeIn();
         $("#downArrow, .navbar-nav, .navbar-toggler").animate({
@@ -258,7 +259,7 @@ $(document).ready(function () {
         }, 1000);
         $("#nut-bio").css("display", "table-cell").fadeIn();
         $(".steps :nth-child(1)").removeClass("active-steps");
-        $(".steps :nth-child(2)").addClass("active-steps")
+        $(".steps :nth-child(2)").addClass("active-steps");
         $(".nut-click-icon").removeClass("active");
         $(event.currentTarget).addClass("active");
         $("#data-center-img").html("<img src='assets/images/" + nutChosen + ".png'/>");
@@ -304,177 +305,7 @@ $(document).ready(function () {
 
         // Api Call to USDA FDC database for food nutrition values.  The url data is changed with each click and alt text for the images used as reference
 
-        function apiCall() {
-            fetch(
-                "https://api.nal.usda.gov/fdc/v1/food/" +
-                nutData[nutChosen]["id"] +
-                "?format=abridged&nutrients=204&nutrients=606&nutrients=601&nutrients=307&nutrients=205&nutrients=291&nutrients=269&nutrients=203&nutrients=401&nutrients=320&nutrients=303&nutrients=306&nutrients=305&nutrients=301&api_key=d0IgDAj0JPoid4UyR93MEyBBcNSfmbW1ZAV6UcDK",
-                {
-                    method: "GET",
-                    // headers: {
 
-                    // },
-                }
-            )
-                .then((response) => response.json())
-                .then((response) => {
-                    results = response;
-
-
-                    // For loop to iterate through the results 
-                    
-
-                    for (let i = 0; i < results.foodNutrients.length; i++) {
-
-                        const amount = results.foodNutrients[i].amount
-
-                        // if & else if loops to fill in data for the nutrition label.  Math added with current RDA data to calculate %
-
-                        if (
-                            Object.values(results.foodNutrients[i]).indexOf(
-                                "Total lipid (fat)"
-                            ) > -1
-                        ) {
-                            document.getElementById("fat-unit").innerHTML =
-                                amount + "g";
-                            document.getElementById("fat-rda").innerHTML =
-                                Math.round((amount / 65) * 100) + "%";
-                        } else if (
-                            Object.values(results.foodNutrients[i]).indexOf(
-                                "Fatty acids, total saturated"
-                            ) > -1
-                        ) {
-                            document.getElementById("satfat-unit").innerHTML =
-                                amount + "g";
-                            document.getElementById("satfat-rda").innerHTML =
-                                Math.round((amount / 20) * 100) + "%";
-                        } else if (
-                            Object.values(results.foodNutrients[i]).indexOf("Cholesterol") >
-                            -1
-                        ) {
-                            document.getElementById("chol-unit").innerHTML =
-                                amount + "mg";
-                            document.getElementById("chol-rda").innerHTML =
-                                Math.round((amount / 300) * 100) + "%";
-                        } else if (
-                            Object.values(results.foodNutrients[i]).indexOf("Sodium, Na") > -1
-                        ) {
-                            document.getElementById("sodium-unit").innerHTML =
-                                amount + "mg";
-                            document.getElementById("sodium-rda").innerHTML =
-                                Math.round((amount / 2400) * 100) +
-                                "%";
-                        } else if (
-                            Object.values(results.foodNutrients[i]).indexOf(
-                                "Carbohydrate, by difference"
-                            ) > -1
-                        ) {
-                            document.getElementById("carb-unit").innerHTML =
-                                amount + "g";
-                            document.getElementById("carb-rda").innerHTML =
-                                Math.round((amount / 300) * 100) + "%";
-                        } else if (
-                            Object.values(results.foodNutrients[i]).indexOf(
-                                "Fiber, total dietary"
-                            ) > -1
-                        ) {
-                            document.getElementById("fibre-unit").innerHTML =
-                                amount + "g";
-                            document.getElementById("fibre-rda").innerHTML =
-                                Math.round((amount / 25) * 100) + "%";
-                        } else if (
-                            Object.values(results.foodNutrients[i]).indexOf(
-                                "Sugars, total including NLEA"
-                            ) > -1
-                        ) {
-                            document.getElementById("sugar-unit").innerHTML =
-                                amount + "g";
-                            document.getElementById("sugar-rda").innerHTML =
-                                Math.round((amount / 50) * 100) + "%";
-                        } else if (
-                            Object.values(results.foodNutrients[i]).indexOf("Protein") > -1
-                        ) {
-                            document.getElementById("protein-unit").innerHTML =
-                                amount + "g";
-                            document.getElementById("protein-rda").innerHTML =
-                                Math.round((amount / 50) * 100) + "%";
-                        } else if (
-                            Object.values(results.foodNutrients[i]).indexOf(
-                                "Vitamin A, RAE"
-                            ) > -1
-                        ) {
-                            document.getElementById("vit-a-unit").innerHTML =
-                                amount + "ug";
-                            document.getElementById("vit-a-rda").innerHTML =
-                                Math.round((amount / 900) * 100) + "%";
-                        } else if (
-                            Object.values(results.foodNutrients[i]).indexOf(
-                                "Vitamin C, total ascorbic acid"
-                            ) > -1
-                        ) {
-                            document.getElementById("vit-c-unit").innerHTML =
-                                amount + "mg";
-                            document.getElementById("vit-c-rda").innerHTML =
-                                Math.round((amount / 90) * 100) + "%";
-                        } else if (
-                            Object.values(results.foodNutrients[i]).indexOf("Calcium, Ca") >
-                            -1
-                        ) {
-                            document.getElementById("calcium-unit").innerHTML =
-                                amount + "mg";
-                            document.getElementById("calcium-rda").innerHTML =
-                                Math.round((amount / 1300) * 100) +
-                                "%";
-                        } else if (
-                            Object.values(results.foodNutrients[i]).indexOf("Iron, Fe") > -1
-                        ) {
-                            document.getElementById("iron-unit").innerHTML =
-                                amount + "mg";
-                            document.getElementById("iron-rda").innerHTML =
-                                Math.round((amount / 18) * 100) + "%";
-                        } else if (
-                            Object.values(results.foodNutrients[i]).indexOf("Potassium, K") >
-                            -1
-                        ) {
-                            document.getElementById("pota-unit").innerHTML =
-                                amount + "mg";
-                            document.getElementById("pota-rda").innerHTML =
-                                Math.round((amount / 4700) * 100) +
-                                "%";
-                        } else if (
-                            Object.values(results.foodNutrients[i]).indexOf("Phosphorus, P") >
-                            -1
-                        ) {
-                            document.getElementById("phos-unit").innerHTML =
-                                amount + "mg";
-                            document.getElementById("phos-rda").innerHTML =
-                                Math.round((amount / 1250) * 100) +
-                                "%";
-                        }
-
-                        
-
-                        // Section to do math for calories 
-                        
-                        const fats = Object.values(results.foodNutrients[i]).indexOf("Total lipid (fat)") > -1;
-                        const proteins = Object.values(results.foodNutrients[i]).indexOf("Protein") > -1;
-                        const carbs = Object.values(results.foodNutrients[i]).indexOf("Carbohydrate, by difference") > -1;
-
-                        if(fats) {
-                           var fatUnit = results.foodNutrients[i].amount;
-                        } else if(proteins) {
-                            var proteinUnit = results.foodNutrients[i].amount;
-                        } else if(carbs) {
-                            var carbUnit = results.foodNutrients[i].amount;
-                        }
-                            document.getElementById("calories").innerHTML = Math.round((carbUnit * 4) + (fatUnit * 9) + (proteinUnit * 4))
-                        
-                    }
-                })
-                .catch((err) => {
-                    console.error(err);
-                });
-        }
     });
 
     // Joke generator using a fetch call to a local JSON file with joke data. if loop with a counter to iterate through jokes. 
@@ -514,4 +345,178 @@ $(document).ready(function () {
                 counter++;
             });
         });
+
+    function foodLabel(dataPromise) {
+        dataPromise.then((response) => {
+            results = response;
+
+
+            // For loop to iterate through the results 
+
+
+            for (let i = 0; i < results.foodNutrients.length; i++) {
+
+                const amount = results.foodNutrients[i].amount
+
+                // if & else if loops to fill in data for the nutrition label.  Math added with current RDA data to calculate %
+
+                if (
+                    Object.values(results.foodNutrients[i]).indexOf(
+                        "Total lipid (fat)"
+                    ) > -1
+                ) {
+                    document.getElementById("fat-unit").innerHTML =
+                        amount + "g";
+                    document.getElementById("fat-rda").innerHTML =
+                        Math.round((amount / 65) * 100) + "%";
+                } else if (
+                    Object.values(results.foodNutrients[i]).indexOf(
+                        "Fatty acids, total saturated"
+                    ) > -1
+                ) {
+                    document.getElementById("satfat-unit").innerHTML =
+                        amount + "g";
+                    document.getElementById("satfat-rda").innerHTML =
+                        Math.round((amount / 20) * 100) + "%";
+                } else if (
+                    Object.values(results.foodNutrients[i]).indexOf("Cholesterol") >
+                    -1
+                ) {
+                    document.getElementById("chol-unit").innerHTML =
+                        amount + "mg";
+                    document.getElementById("chol-rda").innerHTML =
+                        Math.round((amount / 300) * 100) + "%";
+                } else if (
+                    Object.values(results.foodNutrients[i]).indexOf("Sodium, Na") > -1
+                ) {
+                    document.getElementById("sodium-unit").innerHTML =
+                        amount + "mg";
+                    document.getElementById("sodium-rda").innerHTML =
+                        Math.round((amount / 2400) * 100) +
+                        "%";
+                } else if (
+                    Object.values(results.foodNutrients[i]).indexOf(
+                        "Carbohydrate, by difference"
+                    ) > -1
+                ) {
+                    document.getElementById("carb-unit").innerHTML =
+                        amount + "g";
+                    document.getElementById("carb-rda").innerHTML =
+                        Math.round((amount / 300) * 100) + "%";
+                } else if (
+                    Object.values(results.foodNutrients[i]).indexOf(
+                        "Fiber, total dietary"
+                    ) > -1
+                ) {
+                    document.getElementById("fibre-unit").innerHTML =
+                        amount + "g";
+                    document.getElementById("fibre-rda").innerHTML =
+                        Math.round((amount / 25) * 100) + "%";
+                } else if (
+                    Object.values(results.foodNutrients[i]).indexOf(
+                        "Sugars, total including NLEA"
+                    ) > -1
+                ) {
+                    document.getElementById("sugar-unit").innerHTML =
+                        amount + "g";
+                    document.getElementById("sugar-rda").innerHTML =
+                        Math.round((amount / 50) * 100) + "%";
+                } else if (
+                    Object.values(results.foodNutrients[i]).indexOf("Protein") > -1
+                ) {
+                    document.getElementById("protein-unit").innerHTML =
+                        amount + "g";
+                    document.getElementById("protein-rda").innerHTML =
+                        Math.round((amount / 50) * 100) + "%";
+                } else if (
+                    Object.values(results.foodNutrients[i]).indexOf(
+                        "Vitamin A, RAE"
+                    ) > -1
+                ) {
+                    document.getElementById("vit-a-unit").innerHTML =
+                        amount + "ug";
+                    document.getElementById("vit-a-rda").innerHTML =
+                        Math.round((amount / 900) * 100) + "%";
+                } else if (
+                    Object.values(results.foodNutrients[i]).indexOf(
+                        "Vitamin C, total ascorbic acid"
+                    ) > -1
+                ) {
+                    document.getElementById("vit-c-unit").innerHTML =
+                        amount + "mg";
+                    document.getElementById("vit-c-rda").innerHTML =
+                        Math.round((amount / 90) * 100) + "%";
+                } else if (
+                    Object.values(results.foodNutrients[i]).indexOf("Calcium, Ca") >
+                    -1
+                ) {
+                    document.getElementById("calcium-unit").innerHTML =
+                        amount + "mg";
+                    document.getElementById("calcium-rda").innerHTML =
+                        Math.round((amount / 1300) * 100) +
+                        "%";
+                } else if (
+                    Object.values(results.foodNutrients[i]).indexOf("Iron, Fe") > -1
+                ) {
+                    document.getElementById("iron-unit").innerHTML =
+                        amount + "mg";
+                    document.getElementById("iron-rda").innerHTML =
+                        Math.round((amount / 18) * 100) + "%";
+                } else if (
+                    Object.values(results.foodNutrients[i]).indexOf("Potassium, K") >
+                    -1
+                ) {
+                    document.getElementById("pota-unit").innerHTML =
+                        amount + "mg";
+                    document.getElementById("pota-rda").innerHTML =
+                        Math.round((amount / 4700) * 100) +
+                        "%";
+                } else if (
+                    Object.values(results.foodNutrients[i]).indexOf("Phosphorus, P") >
+                    -1
+                ) {
+                    document.getElementById("phos-unit").innerHTML =
+                        amount + "mg";
+                    document.getElementById("phos-rda").innerHTML =
+                        Math.round((amount / 1250) * 100) +
+                        "%";
+                }
+
+
+
+                // Section to do math for calories 
+
+                const fats = Object.values(results.foodNutrients[i]).indexOf("Total lipid (fat)") > -1;
+                const proteins = Object.values(results.foodNutrients[i]).indexOf("Protein") > -1;
+                const carbs = Object.values(results.foodNutrients[i]).indexOf("Carbohydrate, by difference") > -1;
+
+                if (fats) {
+                    var fatUnit = results.foodNutrients[i].amount;
+                } else if (proteins) {
+                    var proteinUnit = results.foodNutrients[i].amount;
+                } else if (carbs) {
+                    var carbUnit = results.foodNutrients[i].amount;
+                }
+                document.getElementById("calories").innerHTML = Math.round((carbUnit * 4) + (fatUnit * 9) + (proteinUnit * 4))
+
+            }
+        })
+    }
 });
+
+function fdcApiCall(nutChosen) {
+    console.log(nutChosen);
+    return fetch(
+        "https://api.nal.usda.gov/fdc/v1/food/" +
+        nutChosen +
+        "?format=abridged&nutrients=204&nutrients=606&nutrients=601&nutrients=307&nutrients=205&nutrients=291&nutrients=269&nutrients=203&nutrients=401&nutrients=320&nutrients=303&nutrients=306&nutrients=305&nutrients=301&api_key=d0IgDAj0JPoid4UyR93MEyBBcNSfmbW1ZAV6UcDK",
+        {
+            method: "GET",
+        }
+    )
+        .then((response) => response.json())
+
+        .catch((err) => {
+            console.error(err);
+        });
+}
