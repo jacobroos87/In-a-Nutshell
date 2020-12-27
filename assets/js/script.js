@@ -1,5 +1,9 @@
 $(document).ready(function () {
 
+    (function () {
+            emailjs.init("user_5OGKjNpFoPyKDbBVzTMSw");
+        })();
+
     let prevScrollpos = window.pageYOffset;
     window.onscroll = function () {
         let currentScrollPos = window.pageYOffset;
@@ -226,6 +230,13 @@ $(document).ready(function () {
     function backToTop() {
         window.scrollTo(0, 0);
     }
+
+    $('#myDropdown').on('shown.bs.dropdown', function () {
+      $(".dropdown .dropdown-toggle").css("background-color","#f0c20a")
+    })
+    $('#myDropdown').on('hide.bs.dropdown', function () {
+      $(".dropdown .dropdown-toggle").css("background-color","#a06e19")
+    })
 
     $(".nut-click-icon").on("click", function (event) {
         const nutChosen = event.currentTarget.alt;
