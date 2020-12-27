@@ -463,7 +463,7 @@ footer {
 .nut-links {
 	margin: auto;
     padding: 0 30px;
-    background-color: rgb(103, 146, 97)
+    
 }
 
 .dropdown-item img:hover {
@@ -476,6 +476,11 @@ footer {
     }
 }
 
+.dropdown-menu {
+    background: transparent;
+    border: none;
+}
+
 @media (max-width: 991px) {
     .dropdown-menu{
     text-align: center;
@@ -483,9 +488,9 @@ footer {
 }
 
 .nut-links img {
-    height: 45px;
-    width: 110px;
-	padding: 5px 5px;
+    height: 50px;
+    width: 120px;
+	padding: 3px 3px;
 	font-size: 25px;
 }
 
@@ -495,6 +500,10 @@ footer {
 
 .dropdown-toggle:hover {
     background-color: #a06e19;
+}
+
+.dropdown {
+    margin-bottom: 10px;
 }
 
 #nut-bio {
@@ -552,20 +561,29 @@ footer {
 }
 .center-button h2 {
 	position: relative;
-	top: 25%;
+	top: 22%;
 }
 
 @media (max-width: 576px) {
     .center-button h2 {
-        top: 17%;
+        top: 10%;
         font-size: 1.3rem;
     }
 }
 
 .dropdown-item {
+    
     display: inline;
     margin: 0;
     padding: 0;
+    
+}
+
+.dropdown-item img {
+    border: 5px solid rgb(85, 121, 81);;
+    border-radius: 8px;
+    margin: 2px 2px;
+    background-color: rgb(103, 146, 97);
 }
 
 .nut-name {
