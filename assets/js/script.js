@@ -237,6 +237,8 @@ $(document).ready(function () {
             color: "white",
         }, 1000);
         $("#nut-bio").css("display", "table-cell").fadeIn();
+        $(".steps :nth-child(1)").removeClass("active-steps");
+        $(".steps :nth-child(2)").addClass("active-steps")
         $(".nut-click-icon").removeClass("active");
         $(event.currentTarget).addClass("active");
         $("#data-center-img").html("<img src='assets/images/" + nutChosen + ".png'/>");

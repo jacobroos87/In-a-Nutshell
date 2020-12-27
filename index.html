@@ -56,7 +56,7 @@
 
     <!-- Top Navbar  -->
 
-    <nav class="navbar navbar-expand-lg fixed-top" id="navbarId">
+    <nav class="navbar navbar-expand-lg sticky-top" id="navbarId">
         <a class="navbar-brand" href="#">
             <h1>In a Nutshell...</h1>
         </a>
@@ -76,7 +76,7 @@
                     <a class="nav-link" href="#joke-generator">Jokes</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#contact-form">Contact</a>
+                    <a class="nav-link" href="#contact-form-section">Contact</a>
                 </li>
             </ul>
         </div>
@@ -89,17 +89,26 @@
         <div class="row">
 
             <div class="container-fluid about">
-                <h2>Welcome to In a Nutshell!</h2><br><h3> This website is designed to give you some inside<br class="line-break"> information on some of
+                <h2>Welcome to In a Nutshell!</h2><br>
+                <h3> This website is designed to give you some inside<br class="line-break"> information on some of
                     our planet's edible nuts.</h3><br>
                 <div class="steps">
-                    <h4><b>Step One:</b> Choose your nut from the selection</h4>
+                    <h4 class="active-steps"><b>Step One:</b> Choose your nut from the selection</h4>
                     <h4><b>Step Two:</b> Scroll Down to view the data</h4>
                     <h4><b>Step Three:</b> Keep scrolling for a laugh</h4>
+
+
                 </div>
+                <!-- Down Arrow -->
+                <!-- <div class="scroll-down">
+                        <h2>- Scroll Down -</h2>
+
+                        <a href="#nut-bio"><i class="fas fa-angle-double-down" aria-hidden="true"
+                                id="downArrow"></i></a>
+                    </div> -->
             </div>
 
             <div class="container-fluid selector">
-                <h2 class="section-banner">- Choose your nut -</h2>
                 <span id="nut-name"></span>
                 <div class="row">
 
@@ -143,12 +152,7 @@
         </div>
     </section>
 
-    <!-- Down Arrow -->
-    <div class="scroll-down container-fluid">
-        <h2>- Scroll Down -</h2>
 
-        <a href="#nut-bio"><i class="fas fa-angle-double-down" aria-hidden="true" id="downArrow"></i></a>
-    </div>
 
     <!-- Nut Bio  -->
 
@@ -406,8 +410,29 @@
 
         <!-- Extra smaller icons for easy navigation -->
 
+
+
         <div class="col-12 nut-icons">
-            <ul class="list-inline nut-links">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="-235px">
+                     Nut Selector 
+                </button>
+                <div class="dropdown-menu nut-links" aria-labelledby="dropdownMenu2">
+                    <a class="dropdown-item"><img src="assets/images/cashew-new.png" id="cashew-icon" alt="cashew" class="nut-click-icon"/></a>
+                    <a class="dropdown-item"><img src="assets/images/almond-new.png" id="almond-icon" alt="almond" class="nut-click-icon"/></a>
+                    <a class="dropdown-item"><img src="assets/images/hazel-new.png" id="hazelnut-icon" alt="hazelnut" class="nut-click-icon"/></a>
+                    <a class="dropdown-item"><img src="assets/images/macadamia-new.png" id="macadamia-icon" alt="macadamia" class="nut-click-icon"/></a>
+                    <a class="dropdown-item"><img src="assets/images/walnut-new.png" id="walnut-icon" alt="walnut" class="nut-click-icon"/></a>
+                    <a class="dropdown-item"><img src="assets/images/peanut-new.png" id="peanut-icon" alt="peanut" class="nut-click-icon"/></a>
+                    <a class="dropdown-item"><img src="assets/images/pecan-new.png" id="pecan-icon" alt="pecan" class="nut-click-icon"/></a>
+                    <a class="dropdown-item"><img src="assets/images/pistachio-new.png" id="pistachio-icon" alt="pistachio" class="nut-click-icon"/></a>
+                    <a class="dropdown-item"><img src="assets/images/brazil-new.png" id="brazilnut-icon" alt="brazilnut" class="nut-click-icon"/></a>
+                </div>
+            </div>
+
+
+            <!-- <ul class="list-inline nut-links">
                 <li class="list-inline-item">
                     <img src="assets/images/cashew-new.png" id="cashew-icon" alt="cashew" class="nut-click-icon" />
                     <span class="sr-only">Cashew</span>
@@ -438,16 +463,14 @@
                     <span class="sr-only">Pecan</span>
                 </li>
                 <li class="list-inline-item">
-                    <img src="assets/images/pistachio-new.png" id="pistachio-icon" alt="pistachio"
-                        class="nut-click-icon" />
+                    <img src="assets/images/pistachio-new.png" id="pistachio-icon" alt="pistachio" class="nut-click-icon" />
                     <span class="sr-only">Pistachio</span>
                 </li>
                 <li class="list-inline-item">
-                    <img src="assets/images/brazil-new.png" id="brazilnut-icon" alt="brazilnut"
-                        class="nut-click-icon" />
+                    <img src="assets/images/brazil-new.png" id="brazilnut-icon" alt="brazilnut"class="nut-click-icon" />
                     <span class="sr-only">Brazil Nut</span>
                 </li>
-            </ul>
+            </ul> -->
         </div>
     </section>
 
@@ -480,7 +503,7 @@
         <div class="form-container">
             <h2 class="section-banner">- Contact Us -</h2>
             <h5>Have any questions regarding our nut data? Maybe a joke we could add to our collection?
-                <br><br>Then get in touch! We'd love to hear form you! <br><br>
+                <br><br>Then get in touch! We'd love to hear from you! <br><br>
             </h5>
             <div class="form">
                 <form id="contact_form">
