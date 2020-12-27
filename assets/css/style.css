@@ -568,6 +568,22 @@ footer {
     padding: 0;
 }
 
+.nut-name {
+    background-color: #a06e19;
+    border-radius: 15px;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 50px;
+    width: 150px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.nut-name h4 {
+    margin-top: 10px;
+    font-family: "Concert One", sans-serif;
+}
+
 
 #joke-box {
 	position: absolute;
