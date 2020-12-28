@@ -1,8 +1,12 @@
 $(document).ready(function () {
 
+    // Initialisation for email.js
+
     (function () {
         emailjs.init("user_5OGKjNpFoPyKDbBVzTMSw");
     })();
+
+    // Scroll function for the top navbar to disappear on scroll down and reappear on scroll up
 
     let prevScrollpos = window.pageYOffset;
     window.onscroll = function () {
@@ -217,8 +221,7 @@ $(document).ready(function () {
         },
     };
 
-    // On click function to show info and data divs, including apiCall to fill nutrition label.
-    // The functions and events below are all linked to the alt text of the images
+    // Back to top button function
 
     const backToTopBtn = document.querySelector("#back-to-top");
     const windowSize = $(window).width();
@@ -240,12 +243,17 @@ $(document).ready(function () {
         window.scrollTo(0, 0);
     }
 
+    // Changes made to BS dropdown Nut Selector
+
     $('#myDropdown').on('shown.bs.dropdown', function () {
         $(".dropdown .dropdown-toggle").css("background-color", "#f0c20a")
     })
     $('#myDropdown').on('hide.bs.dropdown', function () {
         $(".dropdown .dropdown-toggle").css("background-color", "#a06e19")
     })
+
+    // Main on click function to show info and data divs and to call the foodLabel function
+    // The functions and events below are all linked to the alt text of the images
 
     $(".nut-click-icon").on("click", function (event) {
         const nutChosen = event.currentTarget.alt;
@@ -302,13 +310,9 @@ $(document).ready(function () {
                 },
             },
         });
-
-        // Api Call to USDA FDC database for food nutrition values.  The url data is changed with each click and alt text for the images used as reference
-
-
     });
 
-    // Joke generator using a fetch call to a local JSON file with joke data. if loop with a counter to iterate through jokes. 
+    // Joke generator using a fetch call to a local JSON file (data.json) with joke data. if loop with a counter to iterate through jokes. 
 
     let jokeResults;
 
@@ -346,13 +350,13 @@ $(document).ready(function () {
             });
         });
 
+    
+
     function foodLabel(dataPromise) {
         dataPromise.then((response) => {
             results = response;
 
-
             // For loop to iterate through the results 
-
 
             for (let i = 0; i < results.foodNutrients.length; i++) {
 
@@ -482,9 +486,7 @@ $(document).ready(function () {
                         "%";
                 }
 
-
-
-                // Section to do math for calories 
+                // JS to calculate the total calories for each nut 
 
                 const fats = Object.values(results.foodNutrients[i]).indexOf("Total lipid (fat)") > -1;
                 const proteins = Object.values(results.foodNutrients[i]).indexOf("Protein") > -1;
@@ -503,6 +505,8 @@ $(document).ready(function () {
         })
     }
 });
+
+// Api Call to USDA FDC database for food nutrition values.  The url data is changed with each click and alt text for the images used as reference
 
 function fdcApiCall(nutChosen) {
     console.log(nutChosen);
