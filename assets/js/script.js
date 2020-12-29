@@ -25,6 +25,8 @@ $(document).ready(function () {
 
     // Data objects for graph data and nut bio
 
+    const lineBreak = "<br></br>";
+
     var xAxis = [
         "x",
         "2010",
@@ -229,7 +231,7 @@ $(document).ready(function () {
     window.addEventListener("scroll", scrollFunction);
 
     function scrollFunction() {
-        if (windowSize > 768 && window.pageYOffset > 300) {
+        if (windowSize > 767 && window.pageYOffset > 300) {
             $(backToTopBtn).fadeIn("slow");
         }
         else {
@@ -243,41 +245,27 @@ $(document).ready(function () {
         window.scrollTo(0, 0);
     }
 
-    // Changes made to BS dropdown Nut Selector
-
-    $('#myDropdown').on('shown.bs.dropdown', function () {
-        $(".dropdown .dropdown-toggle").css("background-color", "#f0c20a")
-    })
-    $('#myDropdown').on('hide.bs.dropdown', function () {
-        $(".dropdown .dropdown-toggle").css("background-color", "#a06e19")
-    })
-
     // Main on click function to show info and data divs and to call the foodLabel function
     // The functions and events below are all linked to the alt text of the images
 
     $(".nut-click-icon").on("click", function (event) {
+
         const nutChosen = event.currentTarget.alt;
         const dataPromise = fdcApiCall(nutData[nutChosen]["id"]);
         foodLabel(dataPromise);
 
         $("#nut-data, #joke-generator, #contact-form-section, .scroll-down, footer").show().fadeIn();
-        $("#downArrow, .navbar-nav, .navbar-toggler").animate({
-            opacity: '1',
-            color: "white",
-        }, 1000);
+        $("#downArrow, .navbar-nav, .navbar-toggler").animate({opacity: '1', color: "white"}, 1000);
+        $("#data-center-img").html("<img src='assets/images/" + nutChosen + ".png'/>");
+        $(".info-container").hide().html(nutData[nutChosen]["nutInfo"]).fadeIn("slow");
+        $("#nutName").html(nutData[nutChosen]["nutName"]).fadeIn("slow");
         $("#nut-bio").css("display", "table-cell").fadeIn();
         $(".steps :nth-child(1)").removeClass("active-steps");
         $(".steps :nth-child(2)").addClass("active-steps");
         $(".nut-click-icon").removeClass("active");
         $(event.currentTarget).addClass("active");
-        $("#data-center-img").html("<img src='assets/images/" + nutChosen + ".png'/>");
-        $(".info-container")
-            .hide()
-            .html(nutData[nutChosen]["nutInfo"])
-            .fadeIn("slow");
-        $("#nutName").html(nutData[nutChosen]["nutName"]).fadeIn("slow");
-
-        // C3.js graph calling data from the data objects at line 221
+        
+        // C3.js graph calling data from the data objects at line 221 and inputting at 288
 
         var chart = c3.generate({
 
@@ -349,8 +337,6 @@ $(document).ready(function () {
                 counter++;
             });
         });
-
-    
 
     function foodLabel(dataPromise) {
         dataPromise.then((response) => {
@@ -500,7 +486,6 @@ $(document).ready(function () {
                     var carbUnit = results.foodNutrients[i].amount;
                 }
                 document.getElementById("calories").innerHTML = Math.round((carbUnit * 4) + (fatUnit * 9) + (proteinUnit * 4))
-
             }
         })
     }
@@ -509,7 +494,6 @@ $(document).ready(function () {
 // Api Call to USDA FDC database for food nutrition values.  The url data is changed with each click and alt text for the images used as reference
 
 function fdcApiCall(nutChosen) {
-    console.log(nutChosen);
     return fetch(
         "https://api.nal.usda.gov/fdc/v1/food/" +
         nutChosen +
