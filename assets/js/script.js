@@ -25,8 +25,6 @@ $(document).ready(function () {
 
     // Data objects for graph data and nut bio
 
-    const lineBreak = "<br></br>";
-
     var xAxis = [
         "x",
         "2010",

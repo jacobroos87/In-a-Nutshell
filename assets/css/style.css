@@ -818,6 +818,12 @@ footer {
 	}
 }
 
+@media (max-width: 320px) {
+    footer {
+		min-height: 75px;
+	}
+}
+
 /*----- Footer social links -----*/
 
 .social-links li a i {
