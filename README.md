@@ -234,21 +234,118 @@ Message is send to developer email address | ✅ | ✅ | ✅ | ✅
 Auto-reply is send to user | ✅ | ✅ | ✅ | ✅ 
 Social links are visible and sized appropriatly | ✅ | ✅ | ✅ | ✅ 
 Footer is visible and sized appropriatly | ✅ | ✅ | ✅ | ✅ 
+Check to see if navbar collapses on smaller devices | ✅ | ✅ | ✅ | ✅ 
 Check all user stories implemented | ✅ | ✅ | ✅ | ✅ 
 
 ### Known errors
 
-*Test is formatted as expected:*
+*Text is formatted as expected:*
 
 The error here is that in safari the position of the nut name on the landing page is offset.
 This error isn't present in any of the other browsers. 
 
 ![Error Image](assets/images/readme-images/landing-error.jpg)
 
+**This error has now been fixed by adding a flex display property, aligning the items to the center and justifying to the center as well.**
 
+# DevTools
 
+Chrome Devtools was used during the development process and used extensively for testing.
+All devices were checked for functionality and visual errors. It was also used to target 
+certain elements of the site to check changes before adding them to the code.  It was also
+very handy when working with C3.js to find right right selectors to adust display options.
 
+The console was used to support the development process of the website JavaScript.
+console.log() was used frequently to check values from the FDC API and also to log out variables and functions.
+All errors were satisfied and the project currently has none outstanding.
 
+# Unit Testing
+
+Unit testing was done using Jasmine.  3 Specs were created using the describe/it format.
+
+* **Spec One**
+    * This spec tests whether the success modal is displayed when a user submits the contact form correctly.  It does this by checking the
+    html content of the modal body
+
+![Spec One](assets/images/readme-images/specone.jpg)
+
+* **Spec Two**
+    * This spec tests to see if the API returns the correct result for the given ID. It does this by checking the description key
+    in the returned object to see if it matches.
+
+![Spec Two](assets/images/readme-images/spectwo.jpg)
+
+* **Spec Three**
+    * This spec checks to see if the on-click function for the nut-icons reveals the lower sections.  
+    It does this by checking to see if their show and fade functions are true.
+
+    ![Spec Three](assets/images/readme-images/specthree.jpg)
+    
+These specs were tested to ensure their functionality by changing values to force a failed test. 
+
+Below are the spec results for the tests:
+
+![Spec Results](assets/images/readme-images/specresults.jpg)
+
+# Automated testing
+
+* HTML was validated using 
+* CSS was validated using
+* JS was validated using
+
+# User Story Testing
+
+- *As a visitor to the site I want to be able to see the purpose of the site clearly*
+
+When arriving at the site it's very clear what the intention of the site is because of the description which is clearly visible in the center
+of the website.  
+
+- *As a visitor I'd like the navigation to be simple and easy to follow*
+
+The step by step was easy to follow and the links directed to their sections with ease
+
+- *As a visitor I want the site to be visually appealing and have a relevant colour scheme* 
+
+Upon arriving at the site the colours are in keeping with the imagery and clearly has a nature based theme
+
+- *As a visitor I want to be able to select a nut and then for the relevant data to be displayed*
+
+Once I clicked on the nut the lower sections became visible and I could navigate to the data section to see information on my selected nut.
+
+- *As a visitor I'd like to see nutritional data on the chosen nut*
+
+One of the sections of data had a detailed breakdown of nutritional value including recommended daily amounts and calories per 100g
+
+- *As a visitor I'd like to be able to see production data for the selected nut*
+
+The second section of data had a clear graph with numerical values aligned with the year of production. I could easily hover over each bar to see an exact figure.
+
+- *As a visitor I want to enjoy being on the site and not be overwhelmed with the amount of data*
+
+The data section is minimal but concise.  It has two key bits of information that's easy to digest and also an image of the nut in a more raw format (desktop only)
+
+- *As a visitor I want to be able to contact the designer for more information or feedback*
+
+I could easily navigate to the contact form, enter my details and send a message to the developer. I received notification that my message was sent and also en email to confirm
+
+- *As a visitor I'd like some humour added to the site to make it feel less serious*
+
+The jokes were a nice touch which put a smile on my face and added a bit of humour 
+
+# User Testing 
+
+## My Mentor (Dick Vlaanderen)
+
+When using the site my mentor mentioned that the original font was a little hard to read so I changed the overall font to the PT-sans style.
+This greatly imoproved the user experience while still working aesthetically with the site.
+
+## A fellow CI student
+
+The student mentioned that on arriving to the site it wasn't clear enough what the intention of the site was.  I took this information and decided to
+add a short description and a step by step to make it super simple and easy to follow.  The original layout had the nut images at the center of the 
+site with no added text just a scroll down arrow which appeared on click.  The wireframe below was from the original design.
+
+![Original Landing Page](assets/images/readme-images/original-landing.jpg)
 
 
 # Deployment & Local Deploy
