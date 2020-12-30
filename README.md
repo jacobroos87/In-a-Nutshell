@@ -214,6 +214,8 @@ UI test | Desktop | Laptop | Ipad | Iphone
 Live site loads on all devices | ✅ | ✅ | ✅ | ✅ 
 Images display correctly | ✅ | ✅ | ✅ | ✅  
 Hover effects work | ✅ | ✅ | ✅ | ✅ 
+Nut name appears in selected box | ✅ | ✅ | ✅ | ✅ 
+Text is formatted as expected | ❌ | ❌ | ❌ | ❌ 
 On-click functionality works | ✅ | ✅ | ✅ | ✅ 
 On-click displays lower sections | ✅ | ✅ | ✅ | ✅ 
 Links scroll to relevant sections | ✅ | ✅ | ✅ | ✅  
@@ -230,8 +232,18 @@ Contact form does not submit if fields aren't filled in | ✅ | ✅ | ✅ | ✅
 Contact form modal displays on successful submission | ✅ | ✅ | ✅ | ✅ 
 Message is send to developer email address | ✅ | ✅ | ✅ | ✅ 
 Auto-reply is send to user | ✅ | ✅ | ✅ | ✅ 
+Social links are visible and sized appropriatly | ✅ | ✅ | ✅ | ✅ 
+Footer is visible and sized appropriatly | ✅ | ✅ | ✅ | ✅ 
+Check all user stories implemented | ✅ | ✅ | ✅ | ✅ 
 
+### Known errors
 
+*Test is formatted as expected:*
+
+The error here is that in safari the position of the nut name on the landing page is offset.
+This error isn't present in any of the other browsers. 
+
+![Error Image](assets/images/readme-images/landing-error.jpg)
 
 
 
