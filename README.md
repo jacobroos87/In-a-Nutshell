@@ -34,6 +34,26 @@ focussing on interaction and UX design.  A live version of the site is available
 
 # Wireframes
 
+## Landing Page
+
+![landing-large](assets/images/readme-images/landing-large.jpg)
+
+## Info section
+
+![info-large](assets/images/readme-images/info-large.jpg)
+
+## Data section
+
+![data-large](assets/images/readme-images/data-large.jpg)
+
+## Joke section
+
+![joke-large](assets/images/readme-images/joke-large.jpg)
+
+## Contact section
+
+![contact-large](assets/images/readme-images/contact-large.jpg)
+
 # Responsive Design
 
 Media queries have been added to ensure the site works well on smaller devices.  BS was also used for some parts of the layout which is already responsive.
