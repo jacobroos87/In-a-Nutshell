@@ -10,13 +10,17 @@ In a Nutshell is a website that has been designed to display information on a se
 common edible nuts. The aim is to provide a small hub of information displayed in a visually attractive way, 
 focussing on interaction and UX design.  A live version of the site is available [HERE](https://jacobroos87.github.io/In-a-Nutshell/).
 
-## UX
+# UX
 
-### Objectives
+## Objectives
 
-* The website will be simple but clear in its design 
+* The website will be simple but clear in its design with a modern design using illustrations
+* The end result needs to be informative but also fun with a lot of interaction
+* It should be easy to contact the creator for more information
+* The code needs to be scalable where possible to add more information in the future
+* The user needs to come away from the site knowing more about edible nuts than they did before
 
-### User Stories
+## User Stories
 
 - As a visitor to the site I want to be able to see the purpose of the site clearly
 - As a visitor I'd like the navigation to be simple and easy to follow
@@ -28,27 +32,81 @@ focussing on interaction and UX design.  A live version of the site is available
 - As a visitor I want to be able to contact the designer for more information or feedback
 - As a visitor I'd like some humour added to the site to make it feel less serious
 
-### Wireframes
+# Wireframes
+
+# Responsive Design
+
+Media queries have been added to ensure the site works well on smaller devices.  BS was also used for some parts of the layout which is already responsive.
+
+* Landing Page
+
+The landing page keeps a similar format for smaller devices however the elements stack instead of being next to each other.  The nut images also scale to keep the 3x3 formation.
+
+* Info Page
+
+This portion of the size has been made responsive with varying padding and also a clamp on the font-size so it automatically scales depending on the device width.
+
+* Data Page
+
+The elements in this section stack ontop of each other and have dynamic withs that change depending on the device. The text sizes also change to suite.
+
+* Jokes
+
+The central button and resulting text scales depending on the device to improve readability.  The 50/50 layout for smaller devices changes from horizontal to vertical.
+
+* Contact
+
+The form inside this section changes depending on the device and the text about is also scaled down.
+
+# Colours & Fonts
+
+## Colours
+
+The colours for the site were kept earthy with a mixture of Green, Brown, Beige , White & Black.
+
+The choice behind this was to compliment the images that were chosen from Shutterstock.  The fonts all remain black and white for contrast and to improve readability.
+
+## Fonts
+
+The fonts that were used on the site are "**Concert One**" and "**PT sans**".  The initial font that was selected (Concert One) was ideal for the vibe of the site
+so I decided to use this for the Branding and also for the nut names to make them stand out.  PT sans was a complimentary font recommended by google fonts which
+I felt was clear and scaled down witout losing clarity.
 
 
+# Features & Structure
 
-## Features
+The site is layed out in a very simple way with some basic information and a step by step for the user to follow.
+The idea behind this was to not bombard the user with information but rather to provide a simple starting point describing what the site is for.
+The choice of nuts were through research of the most commonly found/purchased nuts on the market. I decided to settle for 9 nuts which would form
+the 3x3 structure for the landing.  The information and data on the nuts were to be displayed in a simple way but with some interaction
+and nice effects to keep the user engaged. The site also has a smooth scroll effect added to keep the navigation more visually appealing as the site is all based on one page.
 
-### Navbar
+The sections that were decided upon were:
+
+* Info
+* Data
+* Jokes
+* Contact
+
+This choice was made so there weren't a large number of links for the user to choose from, keeping it simple.
+The decision to add a jokes section was made to keep the site less formal as a lot of data sites are very square and not visually appealing.
+So a small amount of facts and figures followed by something fun.
+
+## Navbar
 
 * The Navbar has a Navbar brand for the website logo and 4 addition links - Info, Data, Jokes & Contact
 * All the links have a hover effect and an active state when selected
 * Bootstrap was used to create a collabsible dropdown (hamburger menu) for smaller devices
 * All 4 links on arriving to te site are hidden until a nut is selected and the data loaded
 
-### About
+## About
 
 * This is a small section as an introduction to the site with a step-by-step and a selected nut indicator
 * As the user makes their choice of nut the highlighted state of the text is moved to the second step
 * The nut selected div is filled with the name of the nut that gets selected
 * This section stacks for smaller devices
 
-### Nut Selector
+## Nut Selector
 
 * **The lower sections and navbar are only made visible once the user selects a nut**
 * The selector is made up of 9 images that are clickable and serves as the main starting point of the site
@@ -56,14 +114,14 @@ focussing on interaction and UX design.  A live version of the site is available
 * The JS functionality links heavily to these images and on click displays all the other sections and navigation links
 * The sizing of the images adjust to keep the 3x3 formation for all devices
 
-### Nut Information
+## Nut Information
 
 * The information is taken from the nutInfo key in the nutData Object and then displayed in the section
 * The section includes the nut name and a small paragraph about the nut
 * On click the information fades in to improve UX
 * The width of the paragraph is adjust for smaller devices including the font-size
 
-### Nut Nutrition
+## Nut Nutrition
 
 * This layout is focussed around an extensive table that mimicks a typical nutrition label
 * The information displayed within the table is dynamic and changes with each nut
@@ -71,18 +129,18 @@ focussing on interaction and UX design.  A live version of the site is available
 * The Calorie count for each nut (based on 100g) is calculated using the API data and JS Math functions
 * The label is resized for smaller devices and is stacked with the other elements in the section
 
-### Nut Central Image
+## Nut Central Image
 
 * For larger devices there is an image of each nut in its raw form which changes with the nut selected
 * This is removed for smaller devices to improve UX
 
-### Nut Production data
+## Nut Production data
 
 * This section is focussed on the C3.js framework to display data from the nutData object 
 * The chart is dynamic and changes values based on the selected nut
 * The size of the chart is adjusted for smaller devices and stacks under the nutrition label
 
-### Joke Generator
+## Joke Generator
 
 * This section has been designed with a 2 sided, 50/50 theme in mind - one for the joke and the other for the answer
 * There is a central button that changes depending on whether you want to generate a joke or reveal the answer
@@ -90,7 +148,7 @@ focussing on interaction and UX design.  A live version of the site is available
 * The generator loops through the jokes and has been developed to be easily updated via the json file 
 * The section also stacks for smaller devices but maintains the 50/50 layout
 
-### Contact Form
+## Contact Form
 
 * This was added with Bootstrap and adjusted to suite the project
 * The blurb above the form was added to entice the user to contact for more data and to potentially submit extra jokes
@@ -99,18 +157,18 @@ focussing on interaction and UX design.  A live version of the site is available
 * The form also has a success/error modal that pops up once the submission has been made
 * The form is resized for smaller devices 
 
-### Footer
+## Footer
 
 * The footer is also hideen until the user selects a nut
 * All social media icons have been added redirecting and opening in a new tab with the addition of _blank
 
-## Technologies Used
+# Technologies Used
 
-### Languages
+## Languages
 
 - #### HTML, CSS, JavaScript
 
-### Libraries and Frameworks
+## Libraries and Frameworks
 
 * #### Bootstrap
     * Used for layout contact form and navbar 
@@ -125,24 +183,65 @@ focussing on interaction and UX design.  A live version of the site is available
 * #### Jasmine
     * Used to test site functionality
 
-### API
+## API
 
 * #### Email.js
     * Used to send contact form submission data to developer and response to user
 * #### FoodData Central API
     * Used to populate nutrition label with current data
 
-## Testing
+# Testing
+
+## Manual Testing
+
+### Testing was done using the following browsers:
+
+* Google Chrome
+* Safari
+* Firefox
+
+### Devices used:
+
+*Only Google Chrome and Safari were used for testing on the below devices*
+
+* Iphone 7
+* Ipad 3rd Generation 
+
+### Functionality Checklist
+
+UI test | Desktop | Laptop | Ipad | Iphone 
+|-------|---------|--------|------|-----------
+Live site loads on all devices | ✅ | ✅ | ✅ | ✅ 
+Images display correctly | ✅ | ✅ | ✅ | ✅  
+Hover effects work | ✅ | ✅ | ✅ | ✅ 
+On-click functionality works | ✅ | ✅ | ✅ | ✅ 
+On-click displays lower sections | ✅ | ✅ | ✅ | ✅ 
+Links scroll to relevant sections | ✅ | ✅ | ✅ | ✅  
+Nut info fades in on selection | ✅ | ✅ | ✅ | ✅ 
+Food label is displayed with API data | ✅ | ✅ | ✅ | ✅ 
+Central image is displayed for larger devices | ✅ | ✅ | ✅ | ✅ 
+C3 graph is displayed and updates on click | ✅ | ✅ | ✅ | ✅ 
+Joke generator central button functions as intended | ✅ | ✅ | ✅ | ✅ 
+Questions and answers display in their relevant divs | ✅ | ✅ | ✅ | ✅ 
+The jokes loop through continually | ✅ | ✅ | ✅ | ✅ 
+The contact form displays correct predicted inputs | ✅ | ✅ | ✅ | ✅ 
+Contact form displays required fields if not filled in | ✅ | ✅ | ✅ | ✅ 
+Contact form does not submit if fields aren't filled in | ✅ | ✅ | ✅ | ✅ 
+Contact form modal displays on successful submission | ✅ | ✅ | ✅ | ✅ 
+Message is send to developer email address | ✅ | ✅ | ✅ | ✅ 
+Auto-reply is send to user | ✅ | ✅ | ✅ | ✅ 
 
 
 
-### Functionality in other browsers
 
-## Deployment
 
-## Deployment & Local Deploy
 
-### Github Pages Deployment
+
+
+
+# Deployment & Local Deploy
+
+## Github Pages Deployment
 
 * Once Project was finished it was pushed to Github.
 * Head to Github.com, login, then select the project repository.
@@ -150,7 +249,7 @@ focussing on interaction and UX design.  A live version of the site is available
 * Select the Master Branch in the "Source" section, followed by the root folder.
 * Click save and the page should become live on the link provided above.
 
-### Local Deployment
+## Local Deployment
 
 * Login to Github and select the project repository.
 * Click on the Gitpod dropdown and download the files as a ZIP.
@@ -158,24 +257,28 @@ focussing on interaction and UX design.  A live version of the site is available
 * Expand the ZIP file and double click the index.html file
 * The project can also be cloned within the terminal using git clone
 
-## Credits
+# Credits
 
-### Content
+## Content
 
 All content on the site was designed and written by myself 
 
-### Media
+## Media
 
-All images for the site were sourced from [Shutterstock](www.shutterstock.com)
+All images for the site were sourced from [Shutterstock](www.shutterstock.com). 
+General search terms were raw nuts, edible nuts and nut illustration.
 The files were downloaded as vector files and then resized for their various applications 
 
 ## Acknowledgements
 
-### Websites and Books used for information:
+I've had excellent support from my Mentor Dick Vlaanderen and also from the code institute tutors.
+The slack community has also been very helpful for feedback and support.
 
-#### Websites:
+## Websites and Books used for information:
 
-* Stack Oveflow
+### Websites:
+
+* Stack Overflow
 * w3schools
 * CSS-tricks
 * FDC API Guide
@@ -185,7 +288,7 @@ The files were downloaded as vector files and then resized for their various app
     * The Coding Train
 
 
-#### Books:
+### Books:
 
 * Head First HTML & CSS - *O'reilly*
 * Head First Javascript Programming - *O'reilly*
