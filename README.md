@@ -342,7 +342,7 @@ The console was used to support the development process of the website JavaScrip
 
 # Unit Testing
 
-Unit testing was done using Jasmine.  3 Specs were created using the describe/it format.
+Unit testing was done using Jasmine.  3 Specs were created using the describe/it format. The file is named **spec.js**.
 
 * **Spec One**
     * This spec tests whether the success modal is displayed when a user submits the contact form correctly.  It does this by checking the html content of the modal body
