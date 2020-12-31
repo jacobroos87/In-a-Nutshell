@@ -17,7 +17,7 @@ $(document).ready(function () {
             document.getElementById("navbarId").style.top = "-65px";
         }
         prevScrollpos = currentScrollPos;
-    }
+    };
 
     // Chart data variables
 
@@ -344,7 +344,7 @@ $(document).ready(function () {
 
             for (let i = 0; i < results.foodNutrients.length; i++) {
 
-                const amount = results.foodNutrients[i].amount
+                const amount = results.foodNutrients[i].amount;
 
                 // if & else if loops to fill in data for the nutrition label.  Math added with current RDA data to calculate %
 
@@ -483,9 +483,9 @@ $(document).ready(function () {
                 } else if (carbs) {
                     var carbUnit = results.foodNutrients[i].amount;
                 }
-                document.getElementById("calories").innerHTML = Math.round((carbUnit * 4) + (fatUnit * 9) + (proteinUnit * 4))
+                document.getElementById("calories").innerHTML = Math.round((carbUnit * 4) + (fatUnit * 9) + (proteinUnit * 4));
             }
-        })
+        });
     }
 });
 

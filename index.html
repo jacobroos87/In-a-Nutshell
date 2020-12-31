@@ -24,12 +24,11 @@
 
     <!-- Contact form successful submission modal -->
 
-    <div id="mySuccessModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
-        aria-hidden="true">
+    <div id="mySuccessModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-body">
-                    <h4>Your form submission was a SUCCESS!!</h4>
+                    <h4 id="mySmallModalLabel">Thank you!<br><br>Your form submission was a SUCCESS</h4>
                 </div>
             </div>
         </div>
@@ -37,12 +36,11 @@
 
     <!-- Contact form submission error modal -->
 
-    <div id="myErrorModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
-        aria-hidden="true">
+    <div id="myErrorModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel2" aria-hidden="true">
         <div class="modal-dialog modal-sm">
             <div class="modal-content">
                 <div class="modal-body">
-                    <h4>There has been an error with your submission.<br><br>Please try again later!</h4>
+                    <h4 id="mySmallModalLabel2">There has been an error with your submission.<br><br>Please try again later!</h4>
                 </div>
             </div>
         </div>
@@ -50,7 +48,7 @@
 
     <!-- Back to top button -->
 
-    <i class="fas fa-angle-double-up" id="back-to-top" href="#"></i>
+    <a href="#"><i class="fas fa-angle-double-up" id="back-to-top"></i></a>
 
     <!-- Top Navbar, changes to hamburger menu for smaller devices -->
 
@@ -59,9 +57,8 @@
             <h1>In a Nutshell...</h1>
         </a>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarSupportedContent15" aria-expanded="false" aria-label="Toggle navigation">
-            <span><i class="fas fa-bars fa-1x"></i></span></button>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span><i class="fas fa-bars fa-1x"></i></span></button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -103,9 +100,7 @@
             <!-- Nut selector -->
 
             <div class="container-fluid selector">
-
                 <div class="row">
-
                     <div class="col-sm-4 col-md-4">
                         <img src="assets/images/cashew-new.png" id="cashew" class="nut-click-icon" alt="cashew" />
                     </div>
@@ -116,7 +111,6 @@
                         <img src="assets/images/hazel-new.png" id="hazelnut" class="nut-click-icon" alt="hazelnut" />
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-sm-4 col-md-4">
                         <img src="assets/images/macadamia-new.png" id="macadamia" class="nut-click-icon"
@@ -129,7 +123,6 @@
                         <img src="assets/images/peanut-new.png" id="peanut" class="nut-click-icon" alt="peanut" />
                     </div>
                 </div>
-
                 <div class="row">
                     <div class="col-sm-4 col-md-4">
                         <img src="assets/images/pecan-new.png" id="pecan" class="nut-click-icon" alt="pecan" />
@@ -164,6 +157,7 @@
                     </header>
 
                     <!-- Nut Nutritional performance table TOP SECTION -->
+                    <!-- Code for the table was taken from https://codepen.io/chriscoyier/pen/egHEK and adjusted -->
 
                     <table class="performance-facts__table">
                         <thead>
@@ -421,18 +415,15 @@
     <section id="joke-generator">
         <div class="container-fluid">
             <div class="row">
-
                 <div class="col-lg-6 col-sm-12 question" id="joke-container">
                     <div id="joke-box"></div>
                 </div>
                 <div class="center-button" id="joke-button">
                     <h2>Generate a Joke</h2>
                 </div>
-
                 <div class="center-button" id="answer-button">
                     <h2>Reveal Answer</h2>
                 </div>
-
                 <div class="col-lg-6 col-sm-12 answer" id="answer-container">
                     <div id="answer-box"></div>
                 </div>
@@ -455,23 +446,19 @@
                             <label for="first_name">First Name</label>
                             <input name="first_name" type="text" class="form-control" id="first_name" required />
                         </div>
-
                         <div class="col">
-                            <label for="lastname">Last Name</label>
+                            <label for="last_name">Last Name</label>
                             <input name="last_name" type="text" class="form-control" id="last_name" required />
                         </div>
                     </div>
-
                     <div class="form-group">
                         <label for="email_address">Email address</label>
                         <input name="email_address" type="email" class="form-control" id="email_address" required />
                     </div>
-
                     <div class="form-group">
                         <label for="message">Message:</label>
-                        <textarea name="message" class="form-control" id="formcomment" rows="5" required></textarea>
+                        <textarea name="message" class="form-control" id="message" rows="5" required></textarea>
                     </div>
-
                     <input class="btn btn-outline-dark form-submit" id="form-submit-button" type="submit" value="Send" />
                 </form>
             </div>
@@ -529,7 +516,7 @@
     <!-- C3 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.20/c3.min.js"></script>
     <!-- Email.js -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <!-- Email.js script file -->
     <script src="assets/js/sendEmail.js"></script>
     <!-- Main JS script file -->

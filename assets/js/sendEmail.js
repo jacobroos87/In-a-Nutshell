@@ -9,7 +9,7 @@ $(document).ready(function () {
             }, function (error) {
                 $("#myErrorModal").modal("show");
                 $("#contact_form")[0].reset();
-                console.log("Form Submission FAILED", error)
-            })
-    })
-})
+                console.log("Form Submission FAILED", error);
+            });
+    });
+});
